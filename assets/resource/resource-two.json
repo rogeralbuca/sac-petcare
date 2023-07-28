@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Consulta 1",
+        "start": "2023-07-27T08:00:00",
+        "end": "2023-07-27T08:30:00",
+        "extendedProps": {
+            "specialty": "Clínica geral"
+        },
+        "description": "Descrição da consulta 1"
+    },
+    {
+        "id": 2,
+        "title": "Consulta 2",
+        "start": "2023-07-27T08:30:00",
+        "end": "2023-07-27T09:00:00",
+        "extendedProps": {
+            "specialty": "Clínica geral"
+        },
+        "description": "Descrição da consulta 2"
+    },
+    {
+        "id": 3,
+        "title": "Consulta 3",
+        "start": "2023-07-27T09:00:00",
+        "end": "2023-07-27T09:30:00",
+        "extendedProps": {
+            "specialty": "Clínica geral"
+        },
+        "description": "Descrição da consulta 3"
+    }
+]

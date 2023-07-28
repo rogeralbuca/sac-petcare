@@ -1,0 +1,30 @@
+#calendar {
+    max-width: auto;
+    margin: 15px auto;
+}
+
+.fc .fc-button-primary {
+    background-color: #13A89E;
+    border-color: #13A89E;
+    color: #fff;
+}
+
+.fc .fc-button-primary:hover {
+    background-color: #11978e;
+    border-color: #11978e;
+    color: #fff;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active {
+    background-color: #11978e;
+    border-color: #11978e;
+    color: #fff;
+}
+
+.fc-col-header-cell-cushion {
+    color: #13A89E;
+}
+
+.fc-col-header-cell-cushion:hover {
+    color: #006790;
+}
