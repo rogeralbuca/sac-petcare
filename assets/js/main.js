@@ -153,3 +153,24 @@ const toggleFullScreen = () => {
 $("#toggleBtn").on('click', function () {
   $(this).children('.bi-fullscreen-exit, .bi-fullscreen').toggleClass("bi-fullscreen-exit bi-fullscreen");
 });
+
+/**
+ * Constantes Offcavas Bootstrap
+ */
+const offcanvas = document.getElementById('offcanvasWithBackdrop')
+const bsOffcanvas = new bootstrap.Offcanvas(offcanvas)
+
+/**
+ * Show ffcavas Bootstrap
+ */
+function offcanvasShow() {
+    bsOffcanvas.show()
+}
+
+/**
+ * Hide ffcavas Bootstrap
+ */
+function offcanvasHide() {
+  bsOffcanvas.hide()
+}
+

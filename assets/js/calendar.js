@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         customButtons: {
             sidebar: {
                 click: function () {
-                    sidebarCollapse();
+                    offcanvasShow();
                 }
             },
             search: {
@@ -155,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
     calendar.render();
     
     changeView = function changeView(date) {
-        console.log(date);
         calendar.changeView('timeGridDay', date);
     }
 });

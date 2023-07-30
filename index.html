@@ -21,42 +21,46 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/jsuites/css/jsuites.css" rel="stylesheet">
+  <link href="assets/vendor/select2/css/select2.min.css" rel="stylesheet" />
+  <link href="assets/vendor/select2/css/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+  <link href="assets/vendor/select2/css/select2-bootstrap-5-theme.rtl.min.css" rel="stylesheet" />
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- Template Calendar CSS File -->
   <link href="assets/css/calendar.css" rel="stylesheet">
+
 </head>
 
 <body class="toggle-sidebar">
 
-  <!-- ======= Header ======= -->
+  <!-- Header -->
   <header id="header" class="fixed-top">
 
-    <!-- ======= Navbar ======= -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
 
       <div class="container-fluid">
 
-        <!-- ======= Logo ======= -->
+        <!-- Logo -->
         <div class="logo">
           <img src="assets/img/logo-app.png" alt="">
         </div>
 
-        <!-- ======= Brand ======= -->
+        <!-- Brand -->
         <a class="navbar-brand" href="#">SAC</a>
 
-        <!-- ======= Navbar Toggler ======= -->
+        <!-- Navbar Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- ======= Navbar collapse ======= -->
+        <!-- Navbar collapse -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          <!-- ======= Navbar Menu ======= -->
+          <!-- Navbar Menu -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Agenda</a>
@@ -67,8 +71,10 @@
                 Configurações
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" onclick="showModal('procedimentosModal')" role="button">Procedimentos</a></li>
-                <li><a class="dropdown-item" onclick="showModal('unidadeModal')" role="button">Unidade Atendimento</a></li>
+                <li><a class="dropdown-item" onclick="showModal('procedimentosModal')" role="button">Procedimentos</a>
+                </li>
+                <li><a class="dropdown-item" onclick="showModal('unidadeModal')" role="button">Unidade Atendimento</a>
+                </li>
               </ul>
             </li>
             <li class="nav-item">
@@ -82,7 +88,7 @@
           <div class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
 
-              <!-- ======= Notification Nav ======= -->
+              <!-- Notification Nav -->
               <a id="toggleBtn" class="nav-link nav-icon" onclick="toggleFullScreen()" role="button">
                 <i class="bi bi-fullscreen"></i>
               </a>
@@ -90,7 +96,7 @@
                 <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                   <i class="bi bi-bell"></i>
                   <span class="badge bg-primary badge-number">4</span>
-                </a><!-- End Notification Icon -->
+                </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                   <li class="dropdown-header">
                     Você tem 4 novas notificações
@@ -146,15 +152,15 @@
                   <li class="dropdown-footer">
                     <a href="#">Ver todas notificações</a>
                   </li>
-                </ul><!-- End Notification Dropdown Items -->
-              </li><!-- End Notification Nav -->
+                </ul>
+              </li>
 
-              <!-- ======= Messages Nav ======= -->
+              <!-- Messages Nav -->
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                   <i class="bi bi-chat-left-text"></i>
                   <span class="badge bg-success badge-number">3</span>
-                </a><!-- End Messages Icon -->
+                </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                   <li class="dropdown-header">
                     Você tem 3 novas mensagens
@@ -205,15 +211,15 @@
                   <li class="dropdown-footer">
                     <a href="#">Ver todas mensagens</a>
                   </li>
-                </ul><!-- End Messages Dropdown Items -->
-              </li><!-- End Messages Nav -->
+                </ul>
+              </li>
 
-              <!-- ======= Profile Nav ======= -->
+              <!-- Profile Nav -->
               <li class="nav-item dropdown pe-3">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                   <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
                   <span class="d-none d-md-block dropdown-toggle ps-2">S. Elizabete</span>
-                </a><!-- End Profile Iamge Icon -->
+                </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                   <li class="dropdown-header">
                     <h6>Elizabete Pereira Soares</h6>
@@ -247,36 +253,579 @@
                       <span>Sair</span>
                     </a>
                   </li>
-                </ul><!-- End Profile Dropdown Items -->
-              </li><!-- End Profile Nav -->
+                </ul>
+              </li>
 
             </ul>
-          </div><!-- End Icons Navigation -->
+          </div>
 
         </div>
 
       </div>
 
-    </nav><!-- End Navbar -->
+    </nav>
 
-  </header><!-- End Header -->
+  </header>
 
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+  <!-- Main -->
+  <main id="main" class="main">
 
-    <ul class="sidebar-nav" id="sidebar-nav">
+    <section class="section calendar">
 
-      <form class="row g-3 needs-validation" novalidate>
+      <div class="row">
 
-        <div class="col-12">
-          <label class="fw-bold">Filtros</label>
+        <!-- Columns -->
+        <div class="col-lg-12">
+
+          <div class="row">
+
+            <!-- Customers Card -->
+            <div class="col-xxl-12 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="card-body">
+
+                  <!-- Calendar -->
+                  <div id='calendar'>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <!-- ======= Unidade de Atendimento ======= -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      Copyright &copy; 2023 <strong><span>Pet Care Centro Veterinário 24hs</span></strong>. Todos os direitos reservados
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Modal Editar/Novo Evento -->
+  <div id="calendarModal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="modalTitle" class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="modalForm" class="row g-3 needs-validation">
+
+            <div class="col-3">
+              <label for="titulo" class="form-label">Título</label>
+              <div class="input-group">
+                <input type="text" id="titulo" class="form-control form-control-sm" required>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="timeStart" class="form-label">Hora Início</label>
+              <div class="input-group">
+                <input type="time" id="timeStart" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="timeEnd" class="form-label">Hora Final</label>
+              <div class="input-group">
+                <input type="time" id="timeEnd" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="status" class="form-label">Status</label>
+              <div class="input-group">
+                <select id="status" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="">Status 01</option>
+                  <option value="">Status 02</option>
+                  <option value="">Status 03</option>
+                  <option value="">Status 04</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <label for="tutor" class="form-label">Tutor</label>
+              <div class="input-group">
+                <input type="text" id="tutor" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <label for="animal" class="form-label">Animal</label>
+              <div class="input-group">
+                <select id="animal" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="">Animal 01</option>
+                  <option value="">Animal 02</option>
+                  <option value="">Animal 03</option>
+                  <option value="">Animal 04</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <label for="procedimento" class="form-label">Procedimento</label>
+              <div class="input-group">
+                <select id="procedimento" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="">Procedimento 01</option>
+                  <option value="">Procedimento 02</option>
+                  <option value="">Procedimento 03</option>
+                  <option value="">Procedimento 04</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="veterinario-multiple-select" class="form-label">Veterinários</label>
+              <div class="input-group">
+                <select id="veterinario-multiple-select" class="form-select form-select-sm"
+                  data-placeholder="Selecione..." multiple>
+                  <option value="1">Veterinário 01</option>
+                  <option value="2">Veterinário 02</option>
+                  <option value="3">Veterinário 03</option>
+                  <option value="4">Veterinário 04</option>
+                  <option value="5">Veterinário 05</option>
+                  <option value="6">Veterinário 06</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="observacao" class="form-label">Observação do Agendamento</label>
+              <div class="form-floating">
+                <textarea class="form-control form-control-sm" id="observacao"></textarea>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Sair</button>
+          <button id="submitButton" type="button" class="btn btn-default btn-sm">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Pesquisa Agendamento -->
+  <div id="pesquisaModal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Pesquisa Agendamento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="pesquisaForm" class="row g-3 needs-validation">
+
+            <div class="col-4">
+              <label for="tutor" class="form-label">Tutor</label>
+              <div class="input-group">
+                <input type="text" id="tutor" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <label for="animal" class="form-label">Animal</label>
+              <div class="input-group">
+                <input type="text" id="animal" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <label for="veterinario" class="form-label">Veterinário</label>
+              <div class="input-group">
+                <select id="veterinario" class="form-select form-select-sm">
+                  <option value="1">Veterinário 01</option>
+                  <option value="2">Veterinário 02</option>
+                  <option value="3">Veterinário 03</option>
+                  <option value="4">Veterinário 04</option>
+                  <option value="5">Veterinário 05</option>
+                  <option value="6">Veterinário 06</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <button type="button" class="btn btn-default">Pesquisar</button>
+            </div>
+
+            <div class="table-responsive-sm">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Data/Hora</th>
+                    <th scope="col">Tutor</th>
+                    <th scope="col">Animal</th>
+                    <th scope="col">Procedimento</th>
+                    <th scope="col">Veterinário</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Procedimentos -->
+  <div id="procedimentosModal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Procedimentos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="modalForm" class="row g-3 needs-validation">
+
+            <div class="col-6">
+              <label for="procedimento" class="form-label">Procedimento</label>
+              <div class="input-group">
+                <input type="text" id="procedimento" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <label for="procedimentoStart" class="form-label">Tempo Procedimento</label>
+              <div class="input-group">
+                <input type="time" id="procedimentoStart" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-check">
+                <input id="tempoProcedimento" type="checkbox" class="form-check-input">
+                <label class="form-check-label" for="exampleCheck1">Mais de um veterinário no procedimento</label>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="unidades-multiple-select" class="form-label">Unidades</label>
+              <div class="input-group">
+                <select id="unidades-multiple-select" class="form-select form-select-sm" data-placeholder="Selecione..."
+                  multiple>
+                  <option value="1">Unidade 01</option>
+                  <option value="2">Unidade 02</option>
+                  <option value="3">Unidade 03</option>
+                  <option value="4">Unidade 04</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="observacao" class="form-label">Observação do Procedimento</label>
+              <div class="form-floating">
+                <textarea class="form-control form-control-sm" id="observacao"></textarea>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Unidade Atendimento -->
+  <div id="unidadeModal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Unidade Atendimento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-unidade-tab" data-bs-toggle="tab" data-bs-target="#nav-unidade"
+                type="button" role="tab" aria-controls="nav-unidade" aria-selected="true">Unidade</button>
+              <button class="nav-link" id="nav-config-tab" data-bs-toggle="tab" data-bs-target="#nav-config"
+                type="button" role="tab" aria-controls="nav-config" aria-selected="false">Configurações</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane show active" id="nav-unidade" role="tabpanel" aria-labelledby="nav-unidade-tab"
+              tabindex="0">
+              <div class="border border-top-0 p-3">
+
+                <form id="unidadeForm" class="row g-3 needs-validation">
+
+                  <div class="col-6">
+                    <label for="nomeUnidade" class="form-label">Nome da Unidade</label>
+                    <div class="input-group">
+                      <input type="text" id="nomeUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <label for="siglaUnidade" class="form-label">Sigla</label>
+                    <div class="input-group">
+                      <input type="text" id="siglaUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <label for="cnpjUnidade" class="form-label">CNPJ</label>
+                    <div class="input-group">
+                      <input type="text" id="cnpjUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <label for="emailUnidade" class="form-label">E-mail Recepção</label>
+                    <div class="input-group">
+                      <input type="text" id="emailUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-6">
+                    <label for="telefoneUnidade" class="form-label">Telefone Recepção</label>
+                    <div class="input-group">
+                      <input type="text" id="telefoneUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="descricaoUnidade" class="form-label">Descrição Complementar</label>
+                    <div class="form-floating">
+                      <textarea class="form-control form-control-sm" id="descricaoUnidade"></textarea>
+                    </div>
+                  </div>
+
+                </form>
+
+                <p class="d-inline-flex mt-4">
+                  <button class="btn btn-default" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#multiCollapseAddress" aria-expanded="false"
+                    aria-controls="multiCollapseAddress">Endereço</button>
+                </p>
+                <div class="collapse multi-collapse" id="multiCollapseAddress">
+
+                  <form id="addressForm" class="row g-3 needs-validation">
+
+                    <div class="col-12">
+                      <label for="logradouroUnidade" class="form-label">Logradouro</label>
+                      <div class="input-group">
+                        <input type="text" id="logradouroUnidade" class="form-control form-control-sm">
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <label for="numeroUnidade" class="form-label">Número</label>
+                      <div class="input-group">
+                        <input type="text" id="numeroUnidade" class="form-control form-control-sm">
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <label for="bairroUnidade" class="form-label">Bairro</label>
+                      <div class="input-group">
+                        <input type="text" id="bairroUnidade" class="form-control form-control-sm">
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <label for="complementoUnidade" class="form-label">Complemento</label>
+                      <div class="input-group">
+                        <input type="text" id="complementoUnidade" class="form-control form-control-sm">
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <label for="cidadeUnidade" class="form-label">Cidade</label>
+                      <div class="input-group">
+                        <input type="text" id="cidadeUnidade" class="form-control form-control-sm">
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <label for="cepUnidade" class="form-label">CEP</label>
+                      <div class="input-group">
+                        <input type="text" id="cepUnidade" class="form-control form-control-sm">
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <label for="ufUnidade" class="form-label">UF</label>
+                      <div class="input-group">
+                        <select id="ufUnidade" class="form-select form-select-sm">
+                          <option value="">Acre (AC)</option>
+                          <option value="">Alagoas (AL)</option>
+                          <option value="">Amapá (AP)</option>
+                          <option value="">Amazonas (AM)</option>
+                          <option value="">Bahia (BA)</option>
+                          <option value="">Ceará (CE)</option>
+                          <option value="">Distrito Federal (DF)</option>
+                          <option value="">Espírito Santo (ES)</option>
+                          <option value="">Goiás (GO)</option>
+                          <option value="">Maranhão (MA)</option>
+                          <option value="">Mato Grosso (MT)</option>
+                          <option value="">Mato Grosso do Sul (MS)</option>
+                          <option value="">Minas Gerais (MG)</option>
+                          <option value="">Pará (PA)</option>
+                          <option value="">Paraíba (PB)</option>
+                          <option value="">Paraná (PR)</option>
+                          <option value="">Pernambuco (PE)</option>
+                          <option value="">Piauí (PI)</option>
+                          <option value="">Rio de Janeiro (RJ)</option>
+                          <option value="">Rio Grande do Norte (RN)</option>
+                          <option value="">Rio Grande do Sul (RS)</option>
+                          <option value="">Rondônia (RO)</option>
+                          <option value="">Roraima (RR)</option>
+                          <option value="">Santa Catarina (SC)</option>
+                          <option value="">São Paulo (SP)</option>
+                          <option value="">Sergipe (SE)</option>
+                          <option value="">Tocantins (TO)Alagoas (AL)</option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </form>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="tab-pane" id="nav-config" role="tabpanel" aria-labelledby="nav-config-tab" tabindex="0">
+              <div class="border border-top-0 p-3">
+
+                <form id="configForm" class="row g-3 needs-validation">
+
+                  <div class="col-6">
+                    <label class="fw-bold">Horário de Funcionamento</label>
+                  </div>
+
+                  <div class="col-6">
+                    <label class="fw-bold">Horário de Almoço</label>
+                  </div>
+
+                  <div class="col-3">
+                    <label for="funcionamentoTimeStart" class="form-label">Início</label>
+                    <div class="input-group">
+                      <input type="time" id="funcionamentoTimeStart" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <label for="funcionamentoTimeEnd" class="form-label">Final</label>
+                    <div class="input-group">
+                      <input type="time" id="funcionamentoTimeEnd" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <label for="almocoTimeStart" class="form-label">Início</label>
+                    <div class="input-group">
+                      <input type="time" id="almocoTimeStart" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <label for="almocoTimeEnd" class="form-label">Final</label>
+                    <div class="input-group">
+                      <input type="time" id="almocoTimeEnd" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="fw-bold">Horário de Funcionamento</label>
+                  </div>
+
+                  <div class="col-3">
+                    <div class="input-group">
+                      <input type="time" id="atendimentoTimeStart" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="colorInput" class="form-label">Color picker</label>
+                    <input type="color" class="form-control form-control-color" id="colorInput" value="#006790"
+                      title="Escolha sua cor">
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Filtros</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+
+      <!-- Form -->
+      <form class="row g-3 needs-validation" novalidate>
+
+        <!-- Unidade de Atendimento -->
         <div class="col-12">
           <div class="input-group has-validation">
-            <select class="form-select form-select-sm" aria-label="Default select example">
-              <option selected>Unidade de Atendimento...</option>
+            <select id="unidades-filtro-multiple-select" class="form-select form-select-sm"
+              data-placeholder="Unidade de Atendimento..." multiple>
               <option value="1">SP – Ibirapuera</option>
               <option value="2">SP – Morumbi</option>
               <option value="3">SP – Jardins</option>
@@ -296,11 +845,11 @@
           </div>
         </div>
 
-        <!-- ======= Especialidade ======= -->
+        <!-- Especialidade -->
         <div class="col-12">
           <div class="input-group has-validation">
-            <select class="form-select form-select-sm" aria-label="Default select example">
-              <option selected>Especialidade...</option>
+            <select id="especialidade-filtro-multiple-select" class="form-select form-select-sm"
+              data-placeholder="Especialidade..." multiple>
               <option value="1">Acupuntura</option>
               <option value="2">Anestesia</option>
               <option value="3">Cardiologia</option>
@@ -326,11 +875,11 @@
           </div>
         </div>
 
-        <!-- ======= Veterinário ======= -->
+        <!-- Veterinário -->
         <div class="col-12">
           <div class="input-group has-validation">
-            <select class="form-select form-select-sm" aria-label="Default select example">
-              <option selected>Veterinário...</option>
+            <select id="veterinario-filtro-multiple-select" class="form-select form-select-sm"
+              data-placeholder="Veterinário..." multiple>
               <option value="1">Dra. Maria Socorro Alencar</option>
               <option value="2">Dra. Ana Tereza Cintra</option>
               <option value="3">Dr. Davi Alencar Simões</option>
@@ -339,81 +888,29 @@
           </div>
         </div>
 
-        <!-- ======= Calendar ======= -->
-        <div id='jsuitesCalendar'></div>        
+        <!-- Calendar -->
+        <div id='jsuitesCalendar'></div>
 
       </form>
 
-      <!-- ======= Button ======= -->
+      <!-- Button -->
       <div class="col-12 mt-4">
-        <button class="btn btn-default w-100" onclick="sidebarCollapse()">Aplicar</button>
+        <button class="btn btn-default w-100" onclick="offcanvasHide()">Aplicar</button>
       </div>
 
-    </ul>
-
-  </aside><!-- End Sidebar-->
-
-  <!-- ======= Main ======= -->
-  <main id="main" class="main">
-
-    <section class="section calendar">
-      <div class="row">
-
-        <!-- Columns -->
-        <div class="col-lg-12">
-
-          <div class="row">
-
-            <!-- Customers Card -->
-            <div class="col-xxl-12 col-xl-12">
-
-              <div class="card info-card customers-card">
-
-                <div class="card-body">
-
-                  <!-- Calendar -->
-                  <div id='calendar'>
-                  </div><!-- End Calendar-->
-
-                </div>
-
-              </div>
-
-            </div><!-- End Customers Card -->
-
-          </div>
-
-        </div><!-- End Left side columns -->
-
-      </div>
-    </section>
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      Copyright &copy; 2023 <strong><span>Pet Care Centro Veterinário 24hs</span></strong>. Todos os direitos reservados
     </div>
-  </footer><!-- End Footer -->
+  </div>
 
-  <!-- ======= Back to Top Button ======= -->
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
-  </a><!-- End Button -->
-  
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/js/code.jquery.com_jquery-3.7.0.min.js"></script>
   <script src="assets/vendor/moment/js/moment.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/fullcalendar/js/index.global.min.js"></script>
   <script src="assets/vendor/jsuites/js/jsuites.js"></script>
+  <script src="assets/vendor/select2/js/select2.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- Sidebar JS File -->
-  <script src="assets/js/sidebar.js"></script>
 
   <!-- Calendar JS File -->
   <script src="assets/js/calendar.js"></script>
@@ -421,497 +918,16 @@
   <!-- JSuites JS File -->
   <script src="assets/js/jsuites.js"></script>
 
+  <!-- Select 2 JS File -->
+  <script src="assets/js/select2.js"></script>
+
 </body>
 
 </html>
 
-<!--  Alert  -->
+<!-- Alert -->
 <div class="alert alert-dismissible" role="alert">
   <i id="icon-alert" class="bi me-1"></i>
   <span id="message-alert"></span>
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-
-<!-- Modal Add and Edit Event -->
-<div id="calendarModal" class="modal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 id="modalTitle" class="modal-title"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="modalForm" class="row g-3 needs-validation">
-
-          <div class="col-3">
-            <label for="titulo" class="form-label">Título</label>
-            <div class="input-group">
-              <input type="text" id="titulo" class="form-control form-control-sm" required>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <label for="timeStart" class="form-label">Hora Início</label>
-            <div class="input-group">
-              <input type="time" id="timeStart" class="form-control form-control-sm">
-            </div>
-          </div>
-
-          <div class="col-3">
-            <label for="timeEnd" class="form-label">Hora Final</label>
-            <div class="input-group">
-              <input type="time" id="timeEnd" class="form-control form-control-sm">
-            </div>
-          </div>
-
-          <div class="col-3">
-            <label for="status" class="form-label">Status</label>
-            <div class="input-group"> 
-              <select id="status" class="form-select form-select-sm">
-                <option value=""></option>
-                <option value="">Status 01</option>
-                <option value="">Status 02</option>
-                <option value="">Status 03</option>
-                <option value="">Status 04</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <label for="tutor" class="form-label">Tutor</label>
-            <div class="input-group">
-              <input type="text" id="tutor" class="form-control form-control-sm">
-            </div>
-          </div>
-
-          <div class="col-4">
-            <label for="animal" class="form-label">Animal</label>
-            <div class="input-group"> 
-              <select id="animal" class="form-select form-select-sm">
-                <option value=""></option>
-                <option value="">Animal 01</option>
-                <option value="">Animal 02</option>
-                <option value="">Animal 03</option>
-                <option value="">Animal 04</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <label for="procedimento" class="form-label">Procedimento</label>
-            <div class="input-group"> 
-              <select id="procedimento" class="form-select form-select-sm">
-                <option value=""></option>
-                <option value="">Procedimento 01</option>
-                <option value="">Procedimento 02</option>
-                <option value="">Procedimento 03</option>
-                <option value="">Procedimento 04</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-12">
-            <label for="veterinario" class="form-label">Veterinários</label>
-            <div class="input-group">
-              <select id="veterinario" class="form-select form-select-sm" multiple>
-                <option value="1">Veterinário 01</option>
-                <option value="2">Veterinário 02</option>
-                <option value="3">Veterinário 03</option>
-                <option value="4">Veterinário 04</option>
-                <option value="5">Veterinário 05</option>
-                <option value="6">Veterinário 06</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-12">
-            <label for="observacao" class="form-label">Observação do Agendamento</label>
-            <div class="form-floating">
-              <textarea class="form-control form-control-sm" id="observacao"></textarea>
-            </div>
-          </div>
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Sair</button>
-        <button id="submitButton" type="button" class="btn btn-default btn-sm">Confirmar</button>
-      </div>
-    </div>
-  </div>  
-</div>
-
-<!-- Modal Search Event -->
-<div id="pesquisaModal" class="modal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Pesquisa Agendamento</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="pesquisaForm" class="row g-3 needs-validation">
-
-          <div class="col-4">
-            <label for="tutor" class="form-label">Tutor</label>
-            <div class="input-group">
-              <input type="text" id="tutor" class="form-control form-control-sm">
-            </div>
-          </div>
-
-          <div class="col-4">
-            <label for="animal" class="form-label">Animal</label>
-            <div class="input-group">
-              <input type="text" id="animal" class="form-control form-control-sm">
-            </div>
-          </div>
-
-          <div class="col-4">
-            <label for="veterinario" class="form-label">Veterinário</label>
-            <div class="input-group">
-              <select id="veterinario" class="form-select form-select-sm">
-                <option value="1">Veterinário 01</option>
-                <option value="2">Veterinário 02</option>
-                <option value="3">Veterinário 03</option>
-                <option value="4">Veterinário 04</option>
-                <option value="5">Veterinário 05</option>
-                <option value="6">Veterinário 06</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <button type="button" class="btn btn-default">Pesquisar</button>
-          </div>
-
-          <div class="table-responsive-sm">
-            <table class="table table-striped table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Data/Hora</th>
-                  <th scope="col">Tutor</th>
-                  <th scope="col">Animal</th>
-                  <th scope="col">Procedimento</th>
-                  <th scope="col">Veterinário</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row"></th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row"></th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row"></th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Procedimentos -->
-<div id="procedimentosModal" class="modal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Procedimentos</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="modalForm" class="row g-3 needs-validation">
-
-          <div class="col-6">
-            <label for="procedimento" class="form-label">Procedimento</label>
-            <div class="input-group">
-              <input type="text" id="procedimento" class="form-control form-control-sm">
-            </div>
-          </div>
-
-          <div class="col-6">
-            <label for="procedimentoStart" class="form-label">Tempo Procedimento</label>
-            <div class="input-group">
-              <input type="time" id="procedimentoStart" class="form-control form-control-sm">
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="form-check">
-              <input id="tempoProcedimento" type="checkbox" class="form-check-input">
-              <label class="form-check-label" for="exampleCheck1">Mais de um veterinário no procedimento</label>
-            </div>
-          </div>
-
-          <div class="col-12">
-            <label for="unidades" class="form-label">Unidades</label>
-            <div class="input-group"> 
-              <select id="unidades" class="form-select form-select-sm" multiple>
-                <option value="">Unidade 01</option>
-                <option value="">Unidade 02</option>
-                <option value="">Unidade 03</option>
-                <option value="">Unidade 04</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-12">
-            <label for="observacao" class="form-label">Observação do Procedimento</label>
-            <div class="form-floating">
-              <textarea class="form-control form-control-sm" id="observacao"></textarea>
-            </div>
-          </div>
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
-        <button type="button" class="btn btn-default">Confirmar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Unidade Atendimento -->
-<div id="unidadeModal" class="modal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Unidade Atendimento</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-unidade-tab" data-bs-toggle="tab" data-bs-target="#nav-unidade" type="button" role="tab" aria-controls="nav-unidade" aria-selected="true">Unidade</button>
-            <button class="nav-link" id="nav-config-tab" data-bs-toggle="tab" data-bs-target="#nav-config" type="button" role="tab" aria-controls="nav-config" aria-selected="false">Configurações</button>
-          </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane show active" id="nav-unidade" role="tabpanel" aria-labelledby="nav-unidade-tab" tabindex="0">
-            <div class="border border-top-0 p-3">
-
-              <form id="unidadeForm" class="row g-3 needs-validation">
-
-                <div class="col-6">
-                  <label for="nomeUnidade" class="form-label">Nome da Unidade</label>
-                  <div class="input-group">
-                    <input type="text" id="nomeUnidade" class="form-control form-control-sm">
-                  </div>
-                </div>
-
-                <div class="col-3">
-                  <label for="siglaUnidade" class="form-label">Sigla</label>
-                  <div class="input-group">
-                    <input type="text" id="siglaUnidade" class="form-control form-control-sm">
-                  </div>
-                </div>
-
-                <div class="col-3">
-                  <label for="cnpjUnidade" class="form-label">CNPJ</label>
-                  <div class="input-group">
-                    <input type="text" id="cnpjUnidade" class="form-control form-control-sm">
-                  </div>
-                </div>
-
-                <div class="col-6">
-                  <label for="emailUnidade" class="form-label">E-mail Recepção</label>
-                  <div class="input-group">
-                    <input type="text" id="emailUnidade" class="form-control form-control-sm">
-                  </div>
-                </div>
-
-                <div class="col-6">
-                  <label for="telefoneUnidade" class="form-label">Telefone Recepção</label>
-                  <div class="input-group">
-                    <input type="text" id="telefoneUnidade" class="form-control form-control-sm">
-                  </div>
-                </div>
-      
-                <div class="col-12">
-                  <label for="descricaoUnidade" class="form-label">Descrição Complementar</label>
-                  <div class="form-floating">
-                    <textarea class="form-control form-control-sm" id="descricaoUnidade"></textarea>
-                  </div>
-                </div>
-
-              </form>
-
-              <p class="d-inline-flex mt-4">
-                <button class="btn btn-default" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseAddress" aria-expanded="false" aria-controls="multiCollapseAddress">Endereço</button>
-              </p>
-              <div class="collapse multi-collapse" id="multiCollapseAddress">
-
-                <form id="addressForm" class="row g-3 needs-validation">
-
-                  <div class="col-12">
-                    <label for="logradouroUnidade" class="form-label">Logradouro</label>
-                    <div class="input-group">
-                      <input type="text" id="logradouroUnidade" class="form-control form-control-sm">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <label for="numeroUnidade" class="form-label">Número</label>
-                    <div class="input-group">
-                      <input type="text" id="numeroUnidade" class="form-control form-control-sm">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <label for="bairroUnidade" class="form-label">Bairro</label>
-                    <div class="input-group">
-                      <input type="text" id="bairroUnidade" class="form-control form-control-sm">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <label for="complementoUnidade" class="form-label">Complemento</label>
-                    <div class="input-group">
-                      <input type="text" id="complementoUnidade" class="form-control form-control-sm">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <label for="cidadeUnidade" class="form-label">Cidade</label>
-                    <div class="input-group">
-                      <input type="text" id="cidadeUnidade" class="form-control form-control-sm">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <label for="cepUnidade" class="form-label">CEP</label>
-                    <div class="input-group">
-                      <input type="text" id="cepUnidade" class="form-control form-control-sm">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <label for="ufUnidade" class="form-label">UF</label>
-                    <div class="input-group">
-                      <select id="ufUnidade" class="form-select form-select-sm">
-                        <option value="">Acre (AC)</option>
-                        <option value="">Alagoas (AL)</option>
-                        <option value="">Amapá (AP)</option>
-                        <option value="">Amazonas (AM)</option>
-                        <option value="">Bahia (BA)</option>
-                        <option value="">Ceará (CE)</option>
-                        <option value="">Distrito Federal (DF)</option>
-                        <option value="">Espírito Santo (ES)</option>
-                        <option value="">Goiás (GO)</option>
-                        <option value="">Maranhão (MA)</option>
-                        <option value="">Mato Grosso (MT)</option>
-                        <option value="">Mato Grosso do Sul (MS)</option>
-                        <option value="">Minas Gerais (MG)</option>
-                        <option value="">Pará (PA)</option>
-                        <option value="">Paraíba (PB)</option>
-                        <option value="">Paraná (PR)</option>
-                        <option value="">Pernambuco (PE)</option>
-                        <option value="">Piauí (PI)</option>
-                        <option value="">Rio de Janeiro (RJ)</option>
-                        <option value="">Rio Grande do Norte (RN)</option>
-                        <option value="">Rio Grande do Sul (RS)</option>
-                        <option value="">Rondônia (RO)</option>
-                        <option value="">Roraima (RR)</option>
-                        <option value="">Santa Catarina (SC)</option>
-                        <option value="">São Paulo (SP)</option>
-                        <option value="">Sergipe (SE)</option>
-                        <option value="">Tocantins (TO)Alagoas (AL)</option>
-                      </select>
-                    </div>
-                  </div>
-
-                </form>
-  
-              </div>
-
-            </div>
-          </div>
-          <div class="tab-pane" id="nav-config" role="tabpanel" aria-labelledby="nav-config-tab" tabindex="0">
-            <div class="border border-top-0 p-3">
-
-              <form id="configForm" class="row g-3 needs-validation">
-
-                <div class="col-6">
-                  <label class="fw-bold">Horário de Funcionamento</label>
-                </div>
-
-                <div class="col-6">
-                  <label class="fw-bold">Horário de Almoço</label>
-                </div>
-                
-                <div class="col-3">
-                  <label for="funcionamentoTimeStart" class="form-label">Início</label>
-                  <div class="input-group">
-                    <input type="time" id="funcionamentoTimeStart" class="form-control form-control-sm">
-                  </div>
-                </div>
-                
-                <div class="col-3">
-                  <label for="funcionamentoTimeEnd" class="form-label">Final</label>
-                  <div class="input-group">
-                    <input type="time" id="funcionamentoTimeEnd" class="form-control form-control-sm">
-                  </div>
-                </div>
-
-                <div class="col-3">
-                  <label for="almocoTimeStart" class="form-label">Início</label>
-                  <div class="input-group">
-                    <input type="time" id="almocoTimeStart" class="form-control form-control-sm">
-                  </div>
-                </div>
-                
-                <div class="col-3">
-                  <label for="almocoTimeEnd" class="form-label">Final</label>
-                  <div class="input-group">
-                    <input type="time" id="almocoTimeEnd" class="form-control form-control-sm">
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <label class="fw-bold">Horário de Funcionamento</label>
-                </div>
-      
-                <div class="col-3">
-                  <div class="input-group">
-                    <input type="time" id="atendimentoTimeStart" class="form-control form-control-sm">
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <label for="colorInput" class="form-label">Color picker</label>
-                  <input type="color" class="form-control form-control-color" id="colorInput" value="#006790" title="Escolha sua cor">
-                </div>
-
-              </form>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
-        <button type="button" class="btn btn-default">Aplicar</button>
-      </div>
-    </div>
-  </div>
 </div>
