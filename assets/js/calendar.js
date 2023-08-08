@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     changeView = function changeView(date) {
         calendar.changeView('timeGridDay', date);
+        console.log(date)
     }
 });
 

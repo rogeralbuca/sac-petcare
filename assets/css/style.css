@@ -900,7 +900,7 @@ h6 {
 /*--------------------------------------------------------------
 # Alert
 --------------------------------------------------------------*/
-.alert {
+.alert-hide {
   display: none;
   position: fixed;
   bottom: 5px;
@@ -921,4 +921,22 @@ h6 {
 --------------------------------------------------------------*/
 .nav-tabs .nav-link {
   color: var(--primary-color);
+}
+
+/*--------------------------------------------------------------
+# Table Período Agenda
+--------------------------------------------------------------*/
+.card-item {
+  width: 140px;
+  height: 80px;
+  padding: 5px;
+}
+
+.card-item .card-action div {
+  display: block;
+}
+
+.periodo-icon {
+  margin-right: 10px;
+  float: right;
 }
