@@ -2,8 +2,8 @@
     {
         "id": 1,
         "title": "Consulta 1",
-        "start": "2023-08-03T08:00:00",
-        "end": "2023-08-03T08:30:00",
+        "start": "2023-08-10T08:00:00",
+        "end": "2023-08-10T08:30:00",
         "extendedProps": {
             "specialty": "Clínica geral"
         },
@@ -12,8 +12,8 @@
     {
         "id": 2,
         "title": "Consulta 2",
-        "start": "2023-08-03T08:30:00",
-        "end": "2023-08-03T09:00:00",
+        "start": "2023-08-10T08:30:00",
+        "end": "2023-08-10T09:00:00",
         "extendedProps": {
             "specialty": "Clínica geral"
         },
@@ -22,8 +22,8 @@
     {
         "id": 3,
         "title": "Consulta 3",
-        "start": "2023-08-03T09:00:00",
-        "end": "2023-08-03T09:30:00",
+        "start": "2023-08-10T09:00:00",
+        "end": "2023-08-10T09:30:00",
         "extendedProps": {
             "specialty": "Clínica geral"
         },
