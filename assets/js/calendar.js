@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTitle = '?';
+
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -33,12 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
             search: 'bi bi-search',
         },
         viewDidMount: function (info) {
-            $(".fc-sidebar-button").tooltip({
-                title: "Unidate: SP – Ibirapuera Especialidade: Cardiologia Veterinário: Dra. Maria Socorro Alencar ",
-                placement: 'right',
-                trigger: 'hover',
-                container: 'body'
-            });
         },
         headerToolbar:
         {
@@ -156,9 +152,25 @@ document.addEventListener('DOMContentLoaded', function () {
     
     changeView = function changeView(date) {
         calendar.changeView('timeGridDay', date);
-        console.log(date)
     }
+    
 });
 
-
-
+function onChangeFilter() {
+    var unidades = $("#unidades-filtro-multiple-select").val();
+    var especialidades = $("#especialidade-filtro-multiple-select").val();
+    var especialistas = $("#especialista-filtro-multiple-select").val();
+  
+    tooltipTitle = `<div class="d-flex align-content-start flex-wrap"><span>Unidade: ${unidades}</span><span>Especialidades: ${especialidades}</span><span>Especialista: ${especialistas}</span></div>`;
+    
+    $(".fc-sidebar-button").attr('data-bs-toggle', 'tooltip');
+    $(".fc-sidebar-button").attr('data-bs-placement', 'right');
+    $(".fc-sidebar-button").attr('data-bs-html', 'true');
+    $(".fc-sidebar-button").attr('data-bs-title', tooltipTitle);
+  
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    }); 
+  
+  }

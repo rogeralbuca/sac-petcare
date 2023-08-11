@@ -38,6 +38,46 @@ var jsuites = jSuites.calendar(document.getElementById('jsuitesCalendar'), {
     },
 });
 
+var reagendamentoCalendar = jSuites.calendar(document.getElementById('reagendamentoCalendar'), {
+    // Define the months in portuguese
+    months: ['Jan', 'Fev', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+    // Define the months in portuguese
+    monthsFull: [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'April',
+        'Maio',
+        'Junho',
+        'Julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro'
+    ],
+    // Define the weekdays
+    weekdays: [
+        'Domingo',
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado'
+    ],
+    // Labels
+    textDone: 'Feito',
+    textReset: 'Limpar',
+    textUpdate: 'Atualizar',
+    // Weekday to start - Starts on Monday
+    startingDay: 1,
+    // Format
+    format: 'YYYY-MM-DD',
+    onupdate: function(a,b) {
+    },
+});
+
 /*--------------------------------------------------------------
 # Set Fullcalendar ChangeView TimeGridDay
 --------------------------------------------------------------*/

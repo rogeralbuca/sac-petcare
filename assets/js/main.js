@@ -98,7 +98,7 @@
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
-  })
+  })  
 
   /**
    * Initiate Bootstrap validation check
@@ -174,3 +174,15 @@ function offcanvasHide() {
   bsOffcanvas.hide()
 }
 
+/**
+ * Change Event Status Select
+ */
+function statusChange(event) {
+  if(event.type === "change" && event.target.value === "cancelado") {
+    $('#calendarModal').modal('hide')
+    $('#tipoCancelamentoModal').modal('show');
+  } else if (event.type === "change" && event.target.value === "reagendamento") {
+    $('#calendarModal').modal('hide')
+    $('#reagendamentoModal').modal('show');
+  }
+}

@@ -48,9 +48,6 @@
           <img src="assets/img/logo-app.png" alt="">
         </div>
 
-        <!-- Brand -->
-        <a class="navbar-brand" href="#">SAC</a>
-
         <!-- Navbar Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,6 +94,39 @@
                 <li>
                   <a class="dropdown-item" onclick="showModal('listaPendenciaModal')" role="button">Lista de Pendência</a>
                 </li>
+                <li>
+                  <a class="dropdown-item" onclick="showModal('afastamentoEspecialistaModal')" role="button">Afastamento Especialista</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="showModal('tutorPetModal')" role="button">Tutor e Pet</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                SAC
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" onclick="showModal('afastamentoEspecialistaModal')" role="button">Afastamento Especialista</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="showModal('analiseSolicitacaoModal')" role="button">Análise de Agenda Unidade</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="showModal('solicitacaoEspecialistaModal')" role="button">Análise Tempo Atendimento</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="showModal('analiseAfastamentoEspecialistaModal')" role="button">Análise Afastamento Especialista</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="showModal('parametrosSistemaModal')" role="button">Parâmetros</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="showModal('tutorPetModal')" role="button">Tutor e Pet</a>
+                </li>
+              </ul>
             </li>
           </ul>
 
@@ -105,7 +135,7 @@
           <div class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
 
-              <!-- Notification Nav -->
+              <!-- Pendências Nav -->
               <a id="toggleBtn" class="nav-link nav-icon" onclick="toggleFullScreen()" role="button">
                 <i class="bi bi-fullscreen"></i>
               </a>
@@ -116,8 +146,8 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                   <li class="dropdown-header">
-                    Você tem 4 novas notificações
-                    <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Ver todas</span></a>
+                    Você tem 4 novas pendências
+                    <a onclick="showModal('listaPendenciaModal')" role="button"><span class="badge rounded-pill bg-primary p-2 ms-2">Ver todas</span></a>
                   </li>
                   <li>
                     <hr class="dropdown-divider">
@@ -125,8 +155,8 @@
                   <li class="notification-item">
                     <i class="bi bi-exclamation-circle text-warning"></i>
                     <div>
-                      <h4>Notificação 01</h4>
-                      <p>Quae dolorem earum veritatis oditseno</p>
+                      <h4>Em contato</h4>
+                      <p>Afastamento Especialista</p>
                       <p>30 min</p>
                     </div>
                   </li>
@@ -136,8 +166,8 @@
                   <li class="notification-item">
                     <i class="bi bi-x-circle text-danger"></i>
                     <div>
-                      <h4>Notificação 02</h4>
-                      <p>Quae dolorem earum veritatis oditseno</p>
+                      <h4>Cancelado pelo Tutor</h4>
+                      <p>Fechamento Período Unidade</p>
                       <p>1 hr</p>
                     </div>
                   </li>
@@ -147,8 +177,8 @@
                   <li class="notification-item">
                     <i class="bi bi-check-circle text-success"></i>
                     <div>
-                      <h4>Notificação 03</h4>
-                      <p>Quae dolorem earum veritatis oditseno</p>
+                      <h4>Confirmação Eletrônica/h4>
+                      <p>Confirmação Agendamento</p>
                       <p>2 hrs</p>
                     </div>
                   </li>
@@ -158,8 +188,8 @@
                   <li class="notification-item">
                     <i class="bi bi-info-circle text-primary"></i>
                     <div>
-                      <h4>Notificação 04</h4>
-                      <p>Quae dolorem earum veritatis oditseno</p>
+                      <h4>1º Tentativa</h4>
+                      <p>Confirmação Agendamento</p>
                       <p>4 hrs</p>
                     </div>
                   </li>
@@ -167,12 +197,12 @@
                     <hr class="dropdown-divider">
                   </li>
                   <li class="dropdown-footer">
-                    <a href="#">Ver todas notificações</a>
+                    <a onclick="showModal('listaPendenciaModal')" role="button">Ver todas pendências</a>
                   </li>
                 </ul>
               </li>
 
-              <!-- Messages Nav -->
+              <!-- Notificações Nav -->
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                   <i class="bi bi-chat-left-text"></i>
@@ -180,8 +210,8 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                   <li class="dropdown-header">
-                    Você tem 3 novas mensagens
-                    <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Ver todas</span></a>
+                    Você tem 3 novas notificações
+                    <a onclick="showModal('notificacoesModal')" role="button"><span class="badge rounded-pill bg-primary p-2 ms-2">Ver todas</span></a>
                   </li>
                   <li>
                     <hr class="dropdown-divider">
@@ -226,7 +256,7 @@
                     <hr class="dropdown-divider">
                   </li>
                   <li class="dropdown-footer">
-                    <a href="#">Ver todas mensagens</a>
+                    <a onclick="showModal('notificacoesModal')" role="button">Ver todas notificações</a>
                   </li>
                 </ul>
               </li>
@@ -336,7 +366,7 @@
   </a>
 
   <!-- Modal Editar/Novo Evento -->
-  <div id="calendarModal" class="modal" tabindex="-1">
+  <div id="calendarModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -389,12 +419,10 @@
             <div class="col-3">
               <label for="status" class="form-label">Status</label>
               <div class="input-group">
-                <select id="status" class="form-select form-select-sm">
-                  <option value=""></option>
-                  <option value="">Status 01</option>
-                  <option value="">Status 02</option>
-                  <option value="">Status 03</option>
-                  <option value="">Status 04</option>
+                <select id="status" class="form-select form-select-sm" onchange="statusChange(event)">
+                  <option value="agendado">Agendado</option>
+                  <option value="cancelado">Cancelado</option>
+                  <option value="reagendamento">Reagendamento</option>
                 </select>
               </div>
             </div>
@@ -410,7 +438,7 @@
               <label for="documentacao" class="form-label">Documento</label>
               <div class="input-group input-group-sm">
                 <input type="text" class="form-control" id="documentacao">
-                <button type="button" class="btn btn-outline-secondary" data-bs-target="#tutorPetModal" data-bs-toggle="modal"><i class="bi bi-plus-lg"></i></button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-target="#cadastroTutorPetModal" data-bs-toggle="modal"><i class="bi bi-plus-lg"></i></button>
               </div>
             </div>
 
@@ -472,7 +500,7 @@
   </div>
 
   <!-- Modal Pesquisa Agendamento -->
-  <div id="pesquisaModal" class="modal" tabindex="-1">
+  <div id="pesquisaModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -561,7 +589,7 @@
   </div>
 
   <!-- Modal Procedimentos -->
-  <div id="procedimentosModal" class="modal" tabindex="-1">
+  <div id="procedimentosModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -633,6 +661,13 @@
                     </div>
                   </div>
 
+                  <div class="input-group col-12">
+                    <label for="linkDocumento" class="form-label">Link do Documento no Site</label>
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control" id="linkDocumento">
+                    </div>
+                  </div>
+
                   <div class="col-4">
                     <label for="notificacao" class="form-label">Tipo Notificação</label>
                     <div class="input-group input-group-sm">
@@ -643,7 +678,7 @@
                       </select>
                     </div>
                   </div>
-
+                 
                   <div class="col-8">
                     <label for="time" class="form-label">Tempo Antecedência</label>
                     <div class="input-group input-group-sm">
@@ -654,7 +689,7 @@
                       <button type="button" class="btn btn-outline-secondary"><i class="bi bi-plus-lg"></i></button>
                     </div>
                   </div>
-
+                 
                   <div class="table-responsive-sm">
                     <table class="table table-sm table-striped table-bordered">
                       <thead>
@@ -704,7 +739,7 @@
   </div>
 
   <!-- Modal Unidade Atendimento -->
-  <div id="unidadeModal" class="modal" tabindex="-1">
+  <div id="unidadeModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -901,7 +936,7 @@
   </div>
   
   <!-- Modal Período Agenda -->
-  <div class="modal fade" id="agendaModal" tabindex="-1">
+  <div id="agendaModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -911,15 +946,6 @@
         <div class="modal-body">
 
           <form id="modalAgendaForm" class="row g-3 needs-validation">
-
-            <div class="col-3">
-              <label for="procedimentoAgenda" class="form-label">Procedimento</label>
-              <div class="input-group">
-                <select id="procedimentoAgenda" class="form-select form-select-sm">
-                  <option value="">Eletrocardiograma</option>
-                </select>
-              </div>
-            </div>
 
             <div class="col-3">
               <label for="especialidadeAgenda" class="form-label">Especialidade</label>
@@ -954,7 +980,7 @@
                           <small  role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small> 
                         </div>
                         <div class="card-action">
-                          <a class="m-1" title="Editar" role="button"><i class="bi bi-pencil-square"></i></a>
+                          <a class="m-1" title="Editar" role='button' data-bs-target="#manutencaoModal" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
                           <a class="m-1" title="Excluir" role="button"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
@@ -968,7 +994,7 @@
                           <small  role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small> 
                         </div>
                         <div class="card-action">
-                          <a class="m-1" title="Editar" role="button"><i class="bi bi-pencil-square"></i></a>
+                          <a class="m-1" title="Editar" role='button' data-bs-target="#manutencaoModal" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
                           <a class="m-1" title="Excluir" role="button"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
@@ -982,7 +1008,7 @@
                           <small  role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small> 
                         </div>
                         <div class="card-action">
-                          <a class="m-1" title="Editar" role="button"><i class="bi bi-pencil-square"></i></a>
+                          <a class="m-1" title="Editar" role='button' data-bs-target="#manutencaoModal" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
                           <a class="m-1" title="Excluir" role="button"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
@@ -1000,7 +1026,7 @@
                           <small  role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small> 
                         </div>
                         <div class="card-action">
-                          <a class="m-1" title="Editar" role="button"><i class="bi bi-pencil-square"></i></a>
+                          <a class="m-1" title="Editar" role='button' data-bs-target="#manutencaoModal" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
                           <a class="m-1" title="Excluir" role="button"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
@@ -1014,7 +1040,7 @@
                           <small  role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small> 
                         </div>
                         <div class="card-action">
-                          <a class="m-1" title="Editar" role="button"><i class="bi bi-pencil-square"></i></a>
+                          <a class="m-1" title="Editar" role='button' data-bs-target="#manutencaoModal" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
                           <a class="m-1" title="Excluir" role="button"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
@@ -1028,7 +1054,7 @@
                           <small  role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small> 
                         </div>
                         <div class="card-action">
-                          <a class="m-1" title="Editar" role="button"><i class="bi bi-pencil-square"></i></a>
+                          <a class="m-1" title="Editar" role='button' data-bs-target="#manutencaoModal" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
                           <a class="m-1" title="Excluir" role="button"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
@@ -1046,7 +1072,7 @@
                           <small  role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small> 
                         </div>
                         <div class="card-action">
-                          <a class="m-1" title="Editar" role="button"><i class="bi bi-pencil-square"></i></a>
+                          <a class="m-1" title="Editar" role='button' data-bs-target="#manutencaoModal" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
                           <a class="m-1" title="Excluir" role="button"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
@@ -1061,7 +1087,7 @@
                           <small  role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small> 
                         </div>
                         <div class="card-action">
-                          <a class="m-1" title="Editar" role="button"><i class="bi bi-pencil-square"></i></a>
+                          <a class="m-1" title="Editar" role='button' data-bs-target="#manutencaoModal" data-bs-toggle="modal"><i class="bi bi-pencil-square"></i></a>
                           <a class="m-1" title="Excluir" role="button"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
@@ -1085,7 +1111,7 @@
   </div>
 
   <!-- Modal Manutenção Agenda -->
-  <div class="modal fade" id="manutencaoModal" tabindex="-1">
+  <div id="manutencaoModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -1101,14 +1127,12 @@
                 <thead>
                   <tr>
                     <th scope="col">Unidade</th>
-                    <th scope="col">Procedimento</th>
                     <th scope="col">Especialidade</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>SP – Ibirapuera</td>
-                    <td>Eletrocardiograma</td>
                     <td>Cardiologia</td>
                   </tr>
                   </tbody>
@@ -1168,12 +1192,12 @@
                 <label class="form-check-label" for="flexRadioDefault2">Reprovado</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">Ativo</label>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">Ativo</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">Fechado</label>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">Fechado</label>
               </div>
             </div>
 
@@ -1183,6 +1207,27 @@
                 <textarea class="form-control form-control-sm" id="descricao"></textarea>
               </div>
             </div> 
+
+            <div class="d-flex justify-content-left">
+              <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+            </div>
 
           </form>
 
@@ -1195,8 +1240,8 @@
     </div>
   </div>
 
-  <!-- Modal Tutor e Pet -->
-  <div id="tutorPetModal" class="modal" tabindex="-1">
+  <!-- Modal Cadastro Tutor e Pet -->
+  <div id="cadastroTutorPetModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -1304,6 +1349,16 @@
                   </div>
 
                   <div class="col-6">
+                    <label for="sexoSelect" class="form-label">Sexo</label>
+                    <div class="input-group input-group-sm">
+                      <select id="sexoSelect" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Fêmea</option>
+                        <option value="2">Macho</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-6">
                     <label for="castradoSwitch" class="form-label">Castrado</label>
                     <div class="form-check form-switch">
                       <input class="form-check-input" type="checkbox" role="switch" id="castradoSwitch">
@@ -1324,7 +1379,7 @@
   </div>
 
   <!-- Modal Configuração Perfil -->
-  <div id="configuracaoPerfilModal" class="modal" tabindex="-1">
+  <div id="configuracaoPerfilModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
@@ -1387,7 +1442,7 @@
   </div>
 
   <!-- Modal Usuário -->
-  <div id="usuarioModal" class="modal" tabindex="-1">
+  <div id="usuarioModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
@@ -1472,7 +1527,7 @@
   </div>
 
   <!-- Modal Especialistas -->
-  <div id="especialistasModal" class="modal" tabindex="-1">
+  <div id="especialistasModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -1699,15 +1754,6 @@
                 <form id="agendaCadastroForm" class="row g-3 needs-validation">
 
                   <div class="col-3">
-                    <label for="cadastroProcedimentoAgenda" class="form-label">Procedimento</label>
-                    <div class="input-group">
-                      <select id="cadastroProcedimentoAgenda" class="form-select form-select-sm">
-                        <option value="">Eletrocardiograma</option>
-                      </select>
-                    </div>
-                  </div>
-      
-                  <div class="col-3">
                     <label for="cadastroEspecialidadeAgenda" class="form-label">Especialidade</label>
                     <div class="input-group">
                       <select id="cadastroEspecialidadeAgenda" class="form-select form-select-sm">
@@ -1873,7 +1919,7 @@
   </div>
 
   <!-- Modal Manutenção Agenda Especialista -->
-  <div class="modal fade" id="manutencaoEspecialistaModal" tabindex="-1">
+  <div id="manutencaoEspecialistaModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -1888,15 +1934,11 @@
               <table class="table table-sm table-sm">
                 <thead>
                   <tr>
-                    <th scope="col">Unidade</th>
-                    <th scope="col">Procedimento</th>
                     <th scope="col">Especialidade</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>SP – Ibirapuera</td>
-                    <td>Eletrocardiograma</td>
                     <td>Cardiologia</td>
                   </tr>
                   </tbody>
@@ -1956,21 +1998,35 @@
                 <label class="form-check-label" for="flexRadioDefault2">Reprovado</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">Ativo</label>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">Ativo</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">Fechado</label>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">Fechado</label>
               </div>
             </div>
 
-            <div class="col-12">
-              <label for="descricao" class="form-label">Motivo da Reprovação</label>
-              <div class="form-floating">
-                <textarea class="form-control form-control-sm" id="descricao"></textarea>
-              </div>
-            </div> 
+            <div class="d-flex justify-content-left">
+              <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+            </div>
 
           </form>
 
@@ -1984,23 +2040,16 @@
   </div>
 
   <!-- Modal Lista de Pendência -->
-  <div class="modal fade" id="listaPendenciaModal" tabindex="-1">
+  <div id="listaPendenciaModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title fs-5" id="staticBackdropLabel">Lista de Pendência de Confirmação da Agenda</h5>
+          <h5 class="modal-title fs-5" id="staticBackdropLabel">Lista de Pendência SAC ou Recepção</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
 
           <form id="listaPendenciaForm" class="row g-3 needs-validation">
-
-            <div class="col-3">
-              <label for="listaPendenciaDate" class="form-label">Data</label>
-              <div class="input-group">
-                <input type="date" id="listaPendenciaDate" class="form-control form-control-sm">
-              </div>
-            </div>
 
             <div class="col-3">
               <label for="pendencia-unidades-select" class="form-label">Unidade de Atendimento</label>
@@ -2024,6 +2073,34 @@
                 <div class="invalid-feedback">Por favor insira a Unidade de Atendimento.</div>
               </div>
             </div>
+
+            <div class="col-3">
+              <label for="motivoSelect" class="form-label">Motivo Reagendamento</label>
+              <div class="input-group input-group-sm">
+                <select id="motivoSelect" class="form-select form-select-sm" data-placeholder="Selecione...">
+                  <option value="1">Fechamento Período Unidade</option>
+                  <option value="2">Afastamento Especialista</option>
+                  <option value="3">Confirmação Agendamento</option>
+                  <option value="3">Atualização Cadastral</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="statusSelect" class="form-label">Status</label>
+              <div class="input-group input-group-sm">
+                <select id="statusSelect" class="form-select form-select-sm" data-placeholder="Selecione...">
+                  <option value="1">Agendado</option>
+                  <option value="1">Reagendado</option>
+                  <option value="1">Em Contato</option>
+                  <option value="1">1º Tentativa</option>
+                  <option value="1">2º Tentativa</option>
+                  <option value="1">Notificado</option>
+                  <option value="1">Confirmação Eletronica</option>
+                  <option value="1">Cancelado pelo Tutor</option>
+                </select>
+              </div>
+            </div>
             
             <div class="col-12">
               <button type="button" class="btn btn-default">Pesquisar</button>
@@ -2033,103 +2110,148 @@
               <table class="table table-sm table-bordered">
                 <thead>
                   <tr>
+                    <th scope="col"><small>Data</small></th>
                     <th scope="col"><small>Horário</small></th>
-                    <th scope="col"><small>Procedimento</small></th>
-                    <th scope="col"><small>Especialidade</small></th>
+                    <th scope="col"><small>Unidade</small></th>
                     <th scope="col"><small>Especialista</small></th>
+                    <th scope="col"><small>Especialidade</small></th>
+                    <th scope="col"><small>Procedimento</small></th>
                     <th scope="col"><small>Tutor</small></th>
                     <th scope="col"><small>Pet</small></th>
+                    <th scope="col"><small>Motivo</small></th>
                     <th scope="col"><small>Status</small></th>
                     <th scope="col"><small>Ação</small></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="table-success">
+                    <td><small>15/05/2023</small></td>
                     <td><small>08:00</small></td>
-                    <td><small>Eletrocardiograma</small></td>
-                    <td><small>Cardiologia</small></td>
-                    <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
-                    <td><small>Sebastião Amâncio</small></td>
-                    <td><small>001234 - Neguinho</small></td>
-                    <td><small>Confirmação Eletrônica</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Dra. Maria Socorro Alencar">Dra. Maria Socorro Alencar</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Cardiologia">Cardiologia</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Eletrocardiograma">Eletrocardiograma</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Sebastião Amâncio">Sebastião Amâncio</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="001234 - Neguinho">001234 - Neguinho</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Afastamento Especialista">Afastamento Especialista</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Confirmação Eletrônica">Confirmação Eletrônica</small></td>
                     <td class="text-center">
-                      <a title="Consultar" class="btn btn-light btn-sm"><i class="bi bi-search" role='button' data-bs-target="#confirmacaoAgendamentoModal" data-bs-toggle="modal"></i></a>
-                    </td>                    
+                      <a title="Contato" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
+                    </td>                 
                   </tr>
-                  <tr>
+                  <tr class="table-primary">
+                    <td><small>15/05/2023</small></td>
                     <td><small>08:30</small></td>
-                    <td><small>Retorno Especialização</small></td>
-                    <td><small>Cardiologia</small></td>
-                    <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
-                    <td><small>Roberth Silverio</small></td>
-                    <td><small>002355 - Bichano</small></td>
-                    <td><small>Notificado</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="SP – Pacaembu">SP – Pacaembu</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Dra. Maria Socorro Alencar">Dra. Maria Socorro Alencar</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Cardiologia">Cardiologia</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Retorno Especialização">Retorno Especialização</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Roberth Silverio">Roberth Silverio</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="002355 - Bichano">002355 - Bichano</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Afastamento Especialista">Afastamento Especialista</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Notificado">Notificado</small></td>
                     <td class="text-center">
                       <a title="Contato" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
                     </td>
                   </tr>
                   <tr class="table-danger">
+                    <td><small>16/05/2023</small></td>
                     <td><small>09:00</small></td>
-                    <td><small>Ecocardiograma</small></td>
-                    <td><small>Cardiologia</small></td>
-                    <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
-                    <td><small>Amanda dos Anjos</small></td>
-                    <td><small>001378 - Laika</small></td>
-                    <td><small>Cancelado pelo Tutor</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="SP – Tatuapé">SP – Tatuapé</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Dra. Maria Socorro Alencar">Dra. Maria Socorro Alencar</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Cardiologia">Cardiologia</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Ecocardiograma">Ecocardiograma</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Amanda dos Anjos">Amanda dos Anjos</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="001378 - Laika">001378 - Laika</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Fechamento Período Unidade">Fechamento Período Unidade</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Cancelado pelo Tutor">Cancelado pelo Tutor</small></td>
                     <td class="text-center">
-                      <a title="Consultar" class="btn btn-light btn-sm"><i class="bi bi-search" role='button' data-bs-target="#confirmacaoAgendamentoModal" data-bs-toggle="modal"></i></a>
-                    </td>
+                      <a title="Contato" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
+                    </td>  
                   </tr>
                   <tr class="table-success">
+                    <td><small>16/05/2023</small></td>
                     <td><small>09:30</small></td>
-                    <td><small>Ecocardiograma</small></td>
-                    <td><small>Cardiologia</small></td>
-                    <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
-                    <td><small>Rosana Costa</small></td>
-                    <td><small>001453 - Mel</small></td>
-                    <td><small>Confirmação Eletronica</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Dra. Maria Socorro Alencar">Dra. Maria Socorro Alencar</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Cardiologia">Cardiologia</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Ecocardiograma">Ecocardiograma</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Rosana Costa">Rosana Costa</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="001453 - Mel">001453 - Mel</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Confirmação Agendamento">Confirmação Agendamento</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Confirmação Eletronica">Confirmação Eletronica</small></td>
                     <td class="text-center">
                       <a title="Consultar" class="btn btn-light btn-sm" role='button' data-bs-target="#confirmacaoAgendamentoModal" data-bs-toggle="modal"><i class="bi bi-search"></i></a>
                     </td>
                   </tr>
                   <tr class="table-warning">
+                    <td><small>18/05/2023</small></td>
                     <td><small>10:00</small></td>
-                    <td><small>Ecocardiograma</small></td>
-                    <td><small>Cardiologia</small></td>
-                    <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
-                    <td><small>Manoel Silveira de Souza Neto</small></td>
-                    <td><small>009622 - Sol</small></td>
-                    <td><small>Em Contato</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="SP – Ibirapuera">SP – Ibirapuera</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Dra. Maria Socorro Alencar">Dra. Maria Socorro Alencar</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Cardiologia">Cardiologia</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Ecocardiograma">Ecocardiograma</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Manoel Silveira de Souza Neto">Manoel Silveira de Souza Neto</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="009622 - Sol">009622 - Sol</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Atualização Cadastral">Atualização Cadastral</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Em Contato">Em Contato</small></td>
+                    <td class="text-center">
+                      <a title="Consultar" class="btn btn-light btn-sm" role='button' data-bs-target="#atualizacaoCadastralModal" data-bs-toggle="modal"><i class="bi bi-search"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="table-primary">
+                    <td><small>18/05/2023</small></td>
+                    <td><small>10:30</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="SP – Tatuapé">SP – Tatuapé</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Dra. Maria Socorro Alencar">Dra. Maria Socorro Alencar</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Cardiologia">Cardiologia</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Retorno Especialização">Retorno Especialização</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Neide Maria da Silva">Neide Maria da Silva</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="001799 - Rex">001799 - Rex</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Confirmação Agendamento">Confirmação Agendamento</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="1º Tentativa">1º Tentativa</small></td>
                     <td class="text-center">
                       <a title="Consultar" class="btn btn-light btn-sm" role='button' data-bs-target="#confirmacaoAgendamentoModal" data-bs-toggle="modal"><i class="bi bi-search"></i></a>
                     </td>
                   </tr>
-                  <tr>
-                    <td><small>10:30</small></td>
-                    <td><small>Retorno Especialização</small></td>
-                    <td><small>Cardiologia</small></td>
-                    <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
-                    <td><small>Neide Maria da Silva</small></td>
-                    <td><small>001799 - Rex</small></td>
-                    <td><small>1º Tentativa</small></td>
-                    <td class="text-center">
-                      <a title="Consultar" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
+                  <tr class="table-primary">
+                    <td><small>20/05/2023</small></td>
                     <td><small>11:00</small></td>
-                    <td><small>Retorno Especialização</small></td>
-                    <td><small>Cardiologia</small></td>
-                    <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
-                    <td><small>Felipe Souza</small></td>
-                    <td><small>006755 - Felicia</small></td>
-                    <td><small>Notificado</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="SP – Morumbi">SP – Morumbi</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Dra. Maria Socorro Alencar">Dra. Maria Socorro Alencar</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Cardiologia">Cardiologia</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Retorno Especialização">Retorno Especialização</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Felipe Souza">Felipe Souza</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="006755 - Felicia">006755 - Felicia</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Confirmação Agendamento">Confirmação Agendamento</small></td>
+                    <td class="max-width-truncate text-truncate"><small role="button" data-bs-toggle="tooltip" data-bs-title="Notificado">Notificado</small></td>
                     <td class="text-center">
-                      <a title="Consultar" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
+                      <a title="Consultar" class="btn btn-light btn-sm" role='button' data-bs-target="#confirmacaoAgendamentoModal" data-bs-toggle="modal"><i class="bi bi-search"></i></a>
                     </td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
             </div>
 
           </form>
@@ -2143,7 +2265,7 @@
   </div>
 
   <!-- Modal Confirmação de Agendamento -->
-  <div class="modal fade" id="confirmacaoAgendamentoModal" tabindex="-1">
+  <div id="confirmacaoAgendamentoModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -2158,28 +2280,28 @@
               <table class="table table-sm table-bordered">
                 <thead>
                   <tr>
+                    <th scope="col"><small>Data</small></th>
                     <th scope="col"><small>Horário</small></th>
+                    <th scope="col"><small>Unidade</small></th>
                     <th scope="col"><small>Procedimento</small></th>
                     <th scope="col"><small>Especialidade</small></th>
                     <th scope="col"><small>Especialista</small></th>
                     <th scope="col"><small>Tutor</small></th>
                     <th scope="col"><small>Pet</small></th>
-                    <th scope="col"><small>Status</small></th>
-                    <th scope="col"><small>Ação</small></th>
+                    <th scope="col"><small>Telefone</small></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <td><small>15/05/2023</small></td>
                     <td><small>10:30</small></td>
+                    <td><small>SP - Ibirapuera</small></td>
                     <td><small>Retorno Especialização</small></td>
                     <td><small>Cardiologia</small></td>
                     <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
                     <td><small>Neide Maria da Silva</small></td>
                     <td><small>001799 - Rex</small></td>
-                    <td><small>1º Tentativa</small></td>
-                    <td class="text-center">
-                      <a title="Consultar" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
-                    </td>
+                    <td><small>(11) 98786-2345</small></td>
                   </tr>
                 </tbody>
               </table>
@@ -2190,7 +2312,7 @@
             </div>
 
             <div class="input-group">
-              <div class="input-group-text">
+              <div class="input-group-text status-width">
                 <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Confirmado">
                 <span class="p-1">Confirmado</span>
               </div>
@@ -2199,7 +2321,7 @@
             </div>
 
             <div class="input-group">
-              <div class="input-group-text">
+              <div class="input-group-text status-width">
                 <input class="form-check-input mt-0" type="checkbox" value="" aria-label="1º Tentativa">
                 <span class="p-1">1º Tentativa</span>
               </div>
@@ -2208,7 +2330,7 @@
             </div>
 
             <div class="input-group">
-              <div class="input-group-text align-right">
+              <div class="input-group-text status-width">
                 <input class="form-check-input mt-0" type="checkbox" value="" aria-label="2º Tentativa">
                 <span class="p-1">2º Tentativa</span>
               </div>
@@ -2217,7 +2339,7 @@
             </div>
 
             <div class="input-group">
-              <div class="input-group-text">
+              <div class="input-group-text status-width">
                 <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Não Confirmado">
                 <span class="p-1 text">Não Confirmado</span>
               </div>
@@ -2226,7 +2348,110 @@
             </div>
 
             <div class="input-group">
-              <div class="input-group-text">
+              <div class="input-group-text status-width">
+                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Cancelado">
+                <span class="p-1">Cancelado</span>
+              </div>
+              <input type="datetime-local" class="form-control" aria-label="Data e Hora">
+              <input type="text" class="form-control" aria-label="Responsável" placeholder="Responsável pelo Contato">
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Confirmação Atualização Cadastral -->
+  <div id="atualizacaoCadastralModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5" id="staticBackdropLabel">Confirmação Atualização Cadastral</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="atualizacaoCadastralForm" class="row g-3 needs-validation">
+        
+            <div class="table-responsive-sm">
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col"><small>Data</small></th>
+                    <th scope="col"><small>Horário</small></th>
+                    <th scope="col"><small>Unidade</small></th>
+                    <th scope="col"><small>Procedimento</small></th>
+                    <th scope="col"><small>Especialidade</small></th>
+                    <th scope="col"><small>Especialista</small></th>
+                    <th scope="col"><small>Tutor</small></th>
+                    <th scope="col"><small>Pet</small></th>
+                    <th scope="col"><small>Telefone</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><small>15/05/2023</small></td>
+                    <td><small>10:30</small></td>
+                    <td><small>SP - Ibirapuera</small></td>
+                    <td><small>Retorno Especialização</small></td>
+                    <td><small>Cardiologia</small></td>
+                    <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
+                    <td><small>Neide Maria da Silva</small></td>
+                    <td><small>001799 - Rex</small></td>
+                    <td><small>(11) 98786-2345</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="col-12">
+              <label class="fw-bold">Status</label>
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-text status-width">
+                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Confirmado">
+                <span class="p-1">Confirmado</span>
+              </div>
+              <input type="datetime-local" class="form-control" aria-label="Data e Hora">
+              <input type="text" class="form-control" aria-label="Responsável" placeholder="Responsável pelo Contato">
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-text status-width">
+                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="1º Tentativa">
+                <span class="p-1">1º Tentativa</span>
+              </div>
+              <input type="datetime-local" class="form-control" aria-label="Data e Hora">
+              <input type="text" class="form-control" aria-label="Responsável" placeholder="Responsável pelo Contato">
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-text status-width">
+                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="2º Tentativa">
+                <span class="p-1">2º Tentativa</span>
+              </div>
+              <input type="datetime-local" class="form-control" aria-label="Data e Hora">
+              <input type="text" class="form-control" aria-label="Responsável" placeholder="Responsável pelo Contato">
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-text status-width">
+                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Não Confirmado">
+                <span class="p-1 text">Não Confirmado</span>
+              </div>
+              <input type="datetime-local" class="form-control" aria-label="Data e Hora">
+              <input type="text" class="form-control" aria-label="Responsável" placeholder="Responsável pelo Contato">
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-text status-width">
                 <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Cancelado">
                 <span class="p-1">Cancelado</span>
               </div>
@@ -2246,7 +2471,7 @@
   </div>
 
   <!-- Modal Notificações -->
-  <div id="notificacoesModal" class="modal" tabindex="-1">
+  <div id="notificacoesModal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -2403,6 +2628,1258 @@
     </div>
   </div>
 
+  <!-- Modal Tipo Cancelamento -->
+  <div id="tipoCancelamentoModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cancelamento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="tipoCancelamentoForm" class="row g-3 needs-validation">
+
+            <div class="col-12">
+              <label for="tipoCancelamento" class="form-label">Tipo de Cancelamento</label>
+              <div class="input-group">
+                <select id="tipoCancelamento" class="form-select form-select-sm">
+                  <option value="1">Cancelamento 01</option>
+                  <option value="2">Cancelamento 02</option>
+                  <option value="3">Cancelamento 03</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="motivoCancelamento" class="form-label">Motivo Cancelamento</label>
+              <div class="form-floating">
+                <textarea class="form-control form-control-sm" id="motivoCancelamento"></textarea>
+              </div>
+            </div> 
+
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confimar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Afastamento Especialista -->
+  <div id="afastamentoEspecialistaModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Solicitação de Afastamento Programado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="afastamentoEspecialistaForm" class="row g-3 needs-validation">
+
+            <div class="col-12">
+              <label for="afastamentoEspecialistaSelect" class="form-label">Especialista</label>
+              <div class="input-group">
+                <select id="afastamentoEspecialistaSelect" class="form-select form-select-sm">
+                  <option value="0"></option>
+                  <option value="1">Dra. Maria Socorro Alencar</option>
+                  <option value="2">Dra. Ana Tereza Cintra</option>
+                  <option value="3">Dr. Davi Alencar Simões</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label class="fw-bold">Período de Afastamento</label>
+            </div>
+  
+            <div class="col-6">
+              <label for="afastamentoStart" class="form-label">Início</label>
+              <div class="input-group">
+                <input type="date" id="afastamentoStart" class="form-control form-control-sm">
+              </div>
+            </div>
+  
+            <div class="col-6">
+              <label for="afastamentoEnd" class="form-label">Final</label>
+              <div class="input-group">
+                <input type="date" id="afastamentoEnd" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-12">
+              <button type="button" class="btn btn-default">Solicitar</button>
+            </div>
+
+            <div class="table-responsive-sm">
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col"><small>Data Solicitação</small></th>
+                    <th scope="col"><small>Início</small></th>
+                    <th scope="col"><small>Início</small></th>
+                    <th scope="col"><small>Status</small></th>
+                    <th scope="col"><small>Data Status</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><small>14/07/2023 08:00</small></td>
+                    <td><small>14/07/2023</small></td>
+                    <td><small>14/07/2023</small></td>
+                    <td><small>Solicitado</small></td>
+                    <td><small>14/07/2023 08:00</small></td>
+                  </tr>
+                  <tr class="table-success">
+                    <td><small>15/07/2023 08:00</small></td>
+                    <td><small>15/07/2023</small></td>
+                    <td><small>15/07/2023</small></td>
+                    <td><small>Aprovado</small></td>
+                    <td><small>15/07/2023 08:00</small></td>
+                  </tr>
+                  <tr class="table-success">
+                    <td><small>16/07/2023 08:00</small></td>
+                    <td><small>16/07/2023</small></td>
+                    <td><small>16/07/2023</small></td>
+                    <td><small>Aprovado</small></td>
+                    <td><small>16/07/2023 08:00</small></td>
+                  </tr>
+                  <tr class="table-danger">
+                    <td><small>20/07/2023 08:00</small></td>
+                    <td><small>20/07/2023</small></td>
+                    <td><small>20/07/2023</small></td>
+                    <td><small>Rejeitado</small></td>
+                    <td><small>20/07/2023 08:00</small></td>
+                  </tr>
+                  <tr class="table-success">
+                    <td><small>30/07/2023 08:00</small></td>
+                    <td><small>30/07/2023</small></td>
+                    <td><small>30/07/2023</small></td>
+                    <td><small>Aprovado</small></td>
+                    <td><small>30/07/2023 08:00</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confimar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Reagendamento -->
+  <div id="reagendamentoModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5" id="staticBackdropLabel">Reagendamento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="confirmacaoAgendamentoForm" class="row g-3 needs-validation">
+        
+            <div class="table-responsive-sm">
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col"><small>Data</small></th>
+                    <th scope="col"><small>Horário</small></th>
+                    <th scope="col"><small>Unidade</small></th>
+                    <th scope="col"><small>Procedimento</small></th>
+                    <th scope="col"><small>Especialidade</small></th>
+                    <th scope="col"><small>Especialista</small></th>
+                    <th scope="col"><small>Tutor</small></th>
+                    <th scope="col"><small>Pet</small></th>
+                    <th scope="col"><small>Telefone</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><small>15/05/2023</small></td>
+                    <td><small>10:30</small></td>
+                    <td><small>SP - Ibirapuera</small></td>
+                    <td><small>Retorno Especialização</small></td>
+                    <td><small>Cardiologia</small></td>
+                    <td><small>Dra. Dra. Maria Socorro Alencar</small></td>
+                    <td><small>Neide Maria da Silva</small></td>
+                    <td><small>001799 - Rex</small></td>
+                    <td><small>(11) 98786-2345</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="col-6">
+              <label for="reagendamento-unidades-select" class="form-label">Unidade de Atendimento</label>
+              <div class="input-group has-validation">
+                <select id="reagendamento-unidades-select" class="form-select form-select-sm">
+                  <option value="1">SP – Ibirapuera</option>
+                  <option value="2">SP – Morumbi</option>
+                  <option value="3">SP – Jardins</option>
+                  <option value="4">SP – Pacaembu</option>
+                  <option value="5">SP – Tatuapé</option>
+                  <option value="6">SP – Vila Prudente</option>
+                  <option value="7">SP – Centro de Radioterapia</option>
+                  <option value="8">RJ – Pet Care Animália</option>
+                  <option value="9">RS – Porto Alegre Zona Norte</option>
+                  <option value="10">RS – Porto Alegre Zona Sul</option>
+                  <option value="11">RS – Porto Alegre Onco Support</option>
+                  <option value="12">RS – Novo Hamburgo</option>
+                  <option value="13">RS – Litoral / Xangri-Lá</option>
+                  <option value="14">SC – Balneário Camboriú</option>
+                </select>
+                <div class="invalid-feedback">Por favor insira a Unidade de Atendimento.</div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <label for="reagendamento-multiple-select" class="form-label">Especialistas Atendimento</label>
+              <div class="input-group">
+                <select id="reagendamento-multiple-select" class="form-select form-select-sm">
+                  <option value="1">Dra. Maria Socorro Alencar</option>
+                  <option value="2">Dra. Ana Tereza Cintra</option>
+                  <option value="3">Dr. Davi Alencar Simões</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div id='reagendamentoCalendar'></div>
+            </div>
+
+            <div class="col-6">
+              <label for="horarios-multiple-select" class="form-label">Horários Disponíveis</label>
+              <div class="input-group horaios-height">
+                <select id="horarios-multiple-select" class="form-select form-select-sm" multiple>
+                  <option value="1">09:00</option>
+                  <option value="1">09:30</option>
+                  <option value="1">11:00</option>
+                  <option value="1">11:30</option>
+                  <option value="1">13:30</option>
+                  <option value="1">14:00</option>
+                  <option value="1">14:30</option>
+                  <option value="1">15:00</option>
+                  <option value="1">16:00</option>
+                  <option value="1">16:30</option>
+                  <option value="1">17:00</option>
+                  <option value="1">18:00</option>
+                  <option value="1">18:30</option>
+                </select>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Análise de Solicitação de Agenda da Unidade -->
+  <div id="analiseSolicitacaoModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5" id="staticBackdropLabel">Análise de Solicitação de Agenda da Unidade</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="analiseSolicitacaoForm" class="row g-3 needs-validation">
+
+            <div class="table-responsive-sm">
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col"><small>Data Solicitação</small></th>
+                    <th scope="col"><small>Unidade</small></th>
+                    <th scope="col"><small>Especialidade</small></th>
+                    <th scope="col"><small>Dia da Semana</small></th>
+                    <th scope="col"><small>Hora Inicial</small></th>
+                    <th scope="col"><small>Hora Final</small></th>
+                    <th scope="col"><small>Status</small></th>
+                    <th scope="col"><small>Ação</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-warning">
+                    <td><small>15/07/2023</small></td>
+                    <td><small>SP – Ibirapuera</small></td>
+                    <td><small>Cardiologia</small></td>
+                    <td><small>Segunda-Feira</small></td>
+                    <td><small>08:00</small></td>
+                    <td><small>12:00</small></td>
+                    <td><small>Em Análise</small></td>
+                    <td class="text-center">
+                      <a title="Contato" class="btn btn-light btn-sm" role='button' data-bs-target="#agendaModal" data-bs-toggle="modal"><i class="bi bi-search"></i></a>
+                    </td>                 
+                  </tr>
+                  <tr>
+                    <td><small>15/07/2023</small></td>
+                    <td><small>SP – Ibirapuera</small></td>
+                    <td><small>Cardiologia</small></td>
+                    <td><small>Terça-Feira</small></td>
+                    <td><small>08:00</small></td>
+                    <td><small>16:00</small></td>
+                    <td><small>Solicitado</small></td>
+                    <td class="text-center">
+                      <a title="Contato" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
+                    </td>                 
+                  </tr>
+                  <tr class="table-danger">
+                    <td><small>15/07/2023</small></td>
+                    <td><small>SP – Tatuape</small></td>
+                    <td><small>Cardiologia</small></td>
+                    <td><small>Segunda-Feira</small></td>
+                    <td><small>08:00</small></td>
+                    <td><small>14:00</small></td>
+                    <td><small>Reprovado</small></td>
+                    <td class="text-center">
+                      <a title="Contato" class="btn btn-light btn-sm" role='button' data-bs-target="#agendaModal" data-bs-toggle="modal"><i class="bi bi-search"></i></a>
+                    </td>                 
+                  </tr>
+                  <tr>
+                    <td><small>18/07/2023</small></td>
+                    <td><small>SP – Tatuape</small></td>
+                    <td><small>Cardiologia</small></td>
+                    <td><small>Quinta-Feira</small></td>
+                    <td><small>12:00</small></td>
+                    <td><small>18:00</small></td>
+                    <td><small>Solicitado</small></td>
+                    <td class="text-center">
+                      <a title="Contato" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
+                    </td>                 
+                  </tr>
+                  <tr>
+                    <td><small>19/07/2023</small></td>
+                    <td><small>SP – Tatuape</small></td>
+                    <td><small>Cardiologia</small></td>
+                    <td><small>Quarta-Feira</small></td>
+                    <td><small>12:00</small></td>
+                    <td><small>18:00</small></td>
+                    <td><small>Solicitado</small></td>
+                    <td class="text-center">
+                      <a title="Contato" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
+                    </td>                 
+                  </tr>
+                  <tr>
+                    <td><small>20/07/2023</small></td>
+                    <td><small>SP – Morumbi</small></td>
+                    <td><small>Cardiologia</small></td>
+                    <td><small>Sexta-Feira</small></td>
+                    <td><small>08:00</small></td>
+                    <td><small>12:00</small></td>
+                    <td><small>Solicitado</small></td>
+                    <td class="text-center">
+                      <a title="Contato" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
+                    </td>                 
+                  </tr>
+                  <tr>
+                    <td><small>20/07/2023</small></td>
+                    <td><small>SP – Morumbi</small></td>
+                    <td><small>Cardiologia</small></td>
+                    <td><small>Sexta-Feira</small></td>
+                    <td><small>14:00</small></td>
+                    <td><small>18:00</small></td>
+                    <td><small>Solicitado</small></td>
+                    <td class="text-center">
+                      <a title="Contato" class="btn btn-light btn-sm"><i class="bi bi-person"></i></a>
+                    </td>                 
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Parâmetros do Sistema -->
+  <div id="parametrosSistemaModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Parâmetros do Sistema</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="parametrosSistemaForm" class="row g-3 needs-validation">
+
+            <div class="accordion" id="accordionParametrosSistema">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Tempos para Confirmação de Agendamento
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionParametrosSistema">
+                  <div class="accordion-body">
+
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1">1º Tentativa</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+        
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1">2º Tentativa</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+        
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1 text">Não Localizado</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Tempos para Contato de Reagendamento
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionParametrosSistema">
+                  <div class="accordion-body">
+
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1">1º Tentativa</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+        
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1">2º Tentativa</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+        
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1 text">Não Localizado</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Tempos para Contato de Atualização Cadastral
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionParametrosSistema">
+                  <div class="accordion-body">
+
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1">1º Tentativa</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+        
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1">2º Tentativa</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+        
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1 text">Não Localizado</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Tempo para Solicitar a Confirmação do Especialista no Agendamento
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionParametrosSistema">
+                  <div class="accordion-body">
+
+                    <div class="input-group">
+                      <div class="input-group-text status-width">
+                        <span class="p-1">Tempo Confirmação</span>
+                      </div>
+                      <input type="number" class="form-control" aria-label="Valor">
+                      <select id="typeTime" class="form-select form-select-sm" data-placeholder="Selecione...">
+                        <option value="1">Minuto(s)</option>
+                        <option value="2">Hora(s)</option>
+                      </select>
+                    </div>
+                            
+                  </div>
+                </div>
+              </div>
+            </div>  
+
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confimar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Análise da Solicitação de Tempo de Atendimento Especialista -->
+  <div id="solicitacaoEspecialistaModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5" id="staticBackdropLabel">Análise da Solicitação de Tempo de Atendimento Especialista</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="solicitacaoEspecialistaForm" class="row g-3 needs-validation">
+
+            <div class="col-3">
+              <label for="solicitacaoEspecialistaDate" class="form-label">Data Solicitação</label>
+              <div class="input-group">
+                <input type="date" id="solicitacaoEspecialistaDate" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="solicitacao-multiple-select" class="form-label">Especialistas</label>
+              <div class="input-group">
+                <select id="solicitacao-multiple-select" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="1">Dra. Maria Socorro Alencar</option>
+                  <option value="2">Dra. Ana Tereza Cintra</option>
+                  <option value="3">Dr. Davi Alencar Simões</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="solicitacaoEspecialistaProcedimento" class="form-label">Procedimento</label>
+              <div class="input-group">
+                <select id="solicitacaoEspecialistaProcedimento" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="">Procedimento 01</option>
+                  <option value="">Procedimento 02</option>
+                  <option value="">Procedimento 03</option>
+                  <option value="">Procedimento 04</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="solicitacaoEspecialistaStatus" class="form-label">Status</label>
+              <div class="input-group">
+                <select id="solicitacaoEspecialistaStatus" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="">Agendado</option>
+                  <option value="">Cancelado</option>
+                  <option value="">Reagendamento</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="especialistaDataAprovacao" class="form-label">Data Aprovação</label>
+              <div class="input-group">
+                <input type="date" id="especialistaDataAprovacao" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="usuarioAvaliador" class="form-label">Usuário Avaliador</label>
+              <div class="input-group">
+                <select id="usuarioAvaliador" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="">Ana Maria Magalhães</option>
+                  <option value="">José Maurício Souza</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <button type="button" class="btn btn-default">Pesquisar</button>
+            </div>
+
+            <div class="table-responsive-sm">
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col"><small>Data Solicitação</small></th>
+                    <th scope="col"><small>Especialista</small></th>
+                    <th scope="col"><small>Procedimento</small></th>
+                    <th scope="col"><small>Tempo Padrão</small></th>
+                    <th scope="col"><small>Tempo Solicitado</small></th>
+                    <th scope="col"><small>Aprovado</small></th>
+                    <th scope="col"><small>Reprovado</small></th>
+                    <th scope="col"><small>Data/Hora</small></th>
+                    <th scope="col"><small>Usuário Avaliador</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-success">
+                    <td><small>15/06/2023</small></td>
+                    <td><small>Dra. Maria José Silveira</small></td>
+                    <td><small>Eletrocardiograma</small></td>
+                    <td><small>30</small></td>
+                    <td><small>60</small></td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio1" id="flexRadio1" checked>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio2" id="flexRadio2">
+                      </div>
+                    </td>
+                    <td><small>15/06/2023 10:37</small></td>
+                    <td><small>Ana Maria Magalhães</small></td>
+                  </tr>
+                  <tr>
+                    <td><small>01/07/2023</small></td>
+                    <td><small>Dr. Antonio Lopes</small></td>
+                    <td><small>Ecocardiograma</small></td>
+                    <td><small>30</small></td>
+                    <td><small>60</small></td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio3" id="flexRadio3">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio4" id="flexRadio4">
+                      </div>
+                    </td>
+                    <td><small></small></td>
+                    <td><small></small></td>
+                  </tr>
+                  <tr class="table-danger">
+                    <td><small>02/07/2023</small></td>
+                    <td><small>Dr. Antonio Lopes</small></td>
+                    <td><small>Eletrocardiograma</small></td>
+                    <td><small>30</small></td>
+                    <td><small>45</small></td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio5" id="flexRadio5">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio6" id="flexRadio6" checked>
+                      </div>
+                    </td>
+                    <td><small>02/07/2023 15:37</small></td>
+                    <td><small>José Maurício Souza</small></td>
+                  </tr>
+          
+                </tbody>
+              </table>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confimar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Análise da Solicitação de Afastamento do Especialista -->
+  <div id="analiseAfastamentoEspecialistaModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-5" id="staticBackdropLabel">Análise da Solicitação de Afastamento do Especialista</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form id="analiseAfastamentoEspecialistaForm" class="row g-3 needs-validation">
+
+            <div class="col-3">
+              <label for="analiseAfastamentoEspecialistaDate" class="form-label">Data Solicitação</label>
+              <div class="input-group">
+                <input type="date" id="analiseAfastamentoEspecialistaDate" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="afastamento-especialista-multiple-select" class="form-label">Especialistas</label>
+              <div class="input-group">
+                <select id="afastamento-especialista-multiple-select" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="1">Dra. Maria Socorro Alencar</option>
+                  <option value="2">Dra. Ana Tereza Cintra</option>
+                  <option value="3">Dr. Davi Alencar Simões</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="analiseAfastamentoEspecialistaStatus" class="form-label">Status</label>
+              <div class="input-group">
+                <select id="analiseAfastamentoEspecialistaStatus" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="">Agendado</option>
+                  <option value="">Cancelado</option>
+                  <option value="">Reagendamento</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="fastamentoEspecialistaStatusDataAprovacao" class="form-label">Data Aprovação</label>
+              <div class="input-group">
+                <input type="date" id="fastamentoEspecialistaStatusDataAprovacao" class="form-control form-control-sm">
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="fastamentoEspecialistUsuarioAvaliador" class="form-label">Usuário Avaliador</label>
+              <div class="input-group">
+                <select id="fastamentoEspecialistUsuarioAvaliador" class="form-select form-select-sm">
+                  <option value=""></option>
+                  <option value="">Ana Maria Magalhães</option>
+                  <option value="">José Maurício Souza</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <button type="button" class="btn btn-default">Pesquisar</button>
+            </div>
+
+            <div class="table-responsive-sm">
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col"><small>Data Solicitação</small></th>
+                    <th scope="col"><small>Solicitado Por</small></th>
+                    <th scope="col"><small>Especialista</small></th>
+                    <th scope="col"><small>Data Início</small></th>
+                    <th scope="col"><small>Data Fim</small></th>
+                    <th scope="col"><small>Aprovado</small></th>
+                    <th scope="col"><small>Reprovado</small></th>
+                    <th scope="col"><small>Data/Hora</small></th>
+                    <th scope="col"><small>Usuário Avaliador</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><small>01/05/2023 15:32</small></td>
+                    <td><small>SAC</small></td>
+                    <td><small>Dr. Marcos Roberto Macedo</small></td>
+                    <td><small>01/06/2023</small></td>
+                    <td><small>10/06/2023</small></td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio1" id="flexRadio1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio2" id="flexRadio2">
+                      </div>
+                    </td>
+                    <td><small></small></td>
+                    <td><small></small></td>
+                  </tr>
+                  <tr  class="table-success">
+                    <td><small>02/01/2023 10:46</small></td>
+                    <td><small>Recepção</small></td>
+                    <td><small>Dr. Marcos Roberto Macedo</small></td>
+                    <td><small>02/02/2023</small></td>
+                    <td><small>10/02/2023</small></td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio3" id="flexRadio3" checked>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio4" id="flexRadio4">
+                      </div>
+                    </td>
+                    <td><small>03/02/2023</small></td>
+                    <td><small>Ana Maria Magalhães</small></td>
+                  </tr>
+                  <tr class="table-danger">
+                    <td><small>09/07/2023 09:32</small></td>
+                    <td><small>Recepção</small></td>
+                    <td><small>Dr. Marcos Roberto Macedo</small></td>
+                    <td><small>10/07/2023</small></td>
+                    <td><small>20/07/2023</small></td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio5" id="flexRadio5">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-center">
+                        <input class="form-check-input" type="radio" name="flexRadio6" id="flexRadio6" checked>
+                      </div>
+                    </td>
+                    <td><small>10/07/2023 08:33</small></td>
+                    <td><small>Ana Maria Magalhães</small></td>
+                  </tr>
+          
+                </tbody>
+              </table>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confimar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Tutor e Pet -->
+  <div id="tutorPetModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tutor e Pet</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-tutor-tab-modal" data-bs-toggle="tab" data-bs-target="#nav-tutor-modal"
+                type="button" role="tab" aria-controls="nav-tutor-modal" aria-selected="true">Tutor</button>
+              <button class="nav-link" id="nav-pet-tab-modal" data-bs-toggle="tab" data-bs-target="#nav-pet-modal"
+                type="button" role="tab" aria-controls="nav-pet-modal" aria-selected="false">Pet</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane show active" id="nav-tutor-modal" role="tabpanel" aria-labelledby="nav-tutor-tab-modal" tabindex="0">
+              <div class="border border-top-0 p-3">
+                <form id="tutorForm" class="row g-3 needs-validation">
+      
+                  <div class="col-6">
+                    <label for="nomeTutor" class="form-label">Nome Completo</label>
+                    <div class="input-group">
+                      <input type="text" id="nomeTutor" class="form-control form-control-sm">
+                    </div>
+                  </div>
+      
+                  <div class="col-3">
+                    <label for="documentoTutor" class="form-label">Documento</label>
+                    <div class="input-group">
+                      <input type="number" id="documentoTutor" class="form-control form-control-sm">
+                    </div>
+                  </div>
+      
+                  <div class="col-3">
+                    <label for="documento-select" class="form-label">Tipo de Documento</label>
+                    <div class="input-group">
+                      <select id="documento-select" class="form-select form-select-sm">
+                        <option value="1">CPF (Cadastro de Pessoas Físicas)</option>
+                        <option value="2">RG (Registro Geral)</option>
+                        <option value="3">CNH (Carteira Nacional de Habilitação)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="reponsavel1Tutor" class="form-label">Responsável 1</label>
+                    <div class="input-group">
+                      <input type="text" id="reponsavel1Tutor" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="reponsavel2utor" class="form-label">Responsável 2</label>
+                    <div class="input-group">
+                      <input type="text" id="reponsavel2Tutor" class="form-control form-control-sm">
+                    </div>
+                  </div>
+      
+                  <div class="col-4">
+                    <label for="emailTutor" class="form-label">E-mail</label>
+                    <div class="input-group">
+                      <input type="email" id="emailTutor" class="form-control form-control-sm" pattern=".+@globex\.com" size="30">
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="fw-bold">Telefones</label>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="residencialTutor" class="form-label">Residencial</label>
+                    <div class="input-group">
+                      <input type="text" id="residencialTutor" class="form-control form-control-sm" data-mask="(00) 00000-0000" data-mask-selectonfocus="true">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="comercialTutor" class="form-label">Comercial</label>
+                    <div class="input-group">
+                      <input type="text" id="comercialTutor" class="form-control form-control-sm" data-mask="(00) 00000-0000" data-mask-selectonfocus="true">
+                    </div>
+                  </div>
+                  
+                  <div class="col-4">
+                    <label for="cellPhoneTutor" class="form-label">Celular</label>
+                    <div class="input-group">
+                      <input type="text" id="cellPhoneTutor" class="form-control form-control-sm" data-mask="(00) 00000-0000" data-mask-selectonfocus="true">
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="fw-bold">Endereço</label>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="logradouroUnidade" class="form-label">Logradouro</label>
+                    <div class="input-group">
+                      <input type="text" id="logradouroUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="numeroUnidade" class="form-label">Número</label>
+                    <div class="input-group">
+                      <input type="text" id="numeroUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="bairroUnidade" class="form-label">Bairro</label>
+                    <div class="input-group">
+                      <input type="text" id="bairroUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="complementoUnidade" class="form-label">Complemento</label>
+                    <div class="input-group">
+                      <input type="text" id="complementoUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="cidadeUnidade" class="form-label">Cidade</label>
+                    <div class="input-group">
+                      <input type="text" id="cidadeUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="cepUnidade" class="form-label">CEP</label>
+                    <div class="input-group">
+                      <input type="text" id="cepUnidade" class="form-control form-control-sm">
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <label for="ufUnidade" class="form-label">UF</label>
+                    <div class="input-group">
+                      <select id="ufUnidade" class="form-select form-select-sm">
+                        <option value="">Acre (AC)</option>
+                        <option value="">Alagoas (AL)</option>
+                        <option value="">Amapá (AP)</option>
+                        <option value="">Amazonas (AM)</option>
+                        <option value="">Bahia (BA)</option>
+                        <option value="">Ceará (CE)</option>
+                        <option value="">Distrito Federal (DF)</option>
+                        <option value="">Espírito Santo (ES)</option>
+                        <option value="">Goiás (GO)</option>
+                        <option value="">Maranhão (MA)</option>
+                        <option value="">Mato Grosso (MT)</option>
+                        <option value="">Mato Grosso do Sul (MS)</option>
+                        <option value="">Minas Gerais (MG)</option>
+                        <option value="">Pará (PA)</option>
+                        <option value="">Paraíba (PB)</option>
+                        <option value="">Paraná (PR)</option>
+                        <option value="">Pernambuco (PE)</option>
+                        <option value="">Piauí (PI)</option>
+                        <option value="">Rio de Janeiro (RJ)</option>
+                        <option value="">Rio Grande do Norte (RN)</option>
+                        <option value="">Rio Grande do Sul (RS)</option>
+                        <option value="">Rondônia (RO)</option>
+                        <option value="">Roraima (RR)</option>
+                        <option value="">Santa Catarina (SC)</option>
+                        <option value="">São Paulo (SP)</option>
+                        <option value="">Sergipe (SE)</option>
+                        <option value="">Tocantins (TO)Alagoas (AL)</option>
+                      </select>
+                    </div>
+                  </div>
+      
+                </form>
+              </div>
+            </div>
+            <div class="tab-pane show" id="nav-pet-modal" role="tabpanel" aria-labelledby="nav-pet-tab-modal" tabindex="0">
+              <div class="border border-top-0 p-3">
+                <form id="petForm" class="row g-3 needs-validation">
+
+                  <div class="col-12">
+                    <label class="fw-bold">Integração Pet</label>
+                  </div>
+      
+                  <div class="table-responsive-sm">
+                    <table class="table table-sm table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col"><small>Nome</small></th>
+                          <th scope="col"><small>Ficha</small></th>
+                          <th scope="col"><small>Sexo</small></th>
+                          <th scope="col"><small>Nascimento</small></th>
+                          <th scope="col"><small>Peso Atual</small></th>
+                          <th scope="col"><small>Peso Ideal</small></th>
+                          <th scope="col"><small>Espécie</small></th>
+                          <th scope="col"><small>Raça</small></th>
+                          <th scope="col"><small>Cor</small></th>
+                          <th scope="col"><small>Alérgico?</small></th>
+                          <th scope="col"><small>RGA (chip)</small></th>
+                          <th scope="col"><small>Morto?</small></th>
+                          <th scope="col"><small>Castrado?</small></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><small>Suzi</small></td>
+                          <td><small>18345</small></td>
+                          <td><small>Fêmea</small></td>
+                          <td><small>01/07/2020</small></td>
+                          <td><small>0.4</small></td>
+                          <td><small>0.4</small></td>
+                          <td><small>Calopsita</small></td>
+                          <td><small>Lutino Pérola</small></td>
+                          <td><small>Amarelo</small></td>
+                          <td><small>Não</small></td>
+                          <td><small>???</small></td>
+                          <td><small>Não</small></td>
+                          <td><small>Não</small></td>
+                        </tr>
+                        <tr>
+                          <td><small>Rex</small></td>
+                          <td><small>83345</small></td>
+                          <td><small>Macho</small></td>
+                          <td><small>15/08/2021</small></td>
+                          <td><small>3.1</small></td>
+                          <td><small>4.0</small></td>
+                          <td><small>Cão</small></td>
+                          <td><small>Golden Retriever</small></td>
+                          <td><small>Preto</small></td>
+                          <td><small>Não</small></td>
+                          <td><small>Código</small></td>
+                          <td><small>Sim</small></td>
+                          <td><small>Sim</small></td>
+                        </tr>
+                        <tr>
+                          <td><small>Bianca</small></td>
+                          <td><small>65778</small></td>
+                          <td><small>Fêmea</small></td>
+                          <td><small>10/10/2021</small></td>
+                          <td><small>1.3</small></td>
+                          <td><small>1.0</small></td>
+                          <td><small>Felino</small></td>
+                          <td><small>Persa</small></td>
+                          <td><small>Cinza</small></td>
+                          <td><small>Não</small></td>
+                          <td><small>ou</small></td>
+                          <td><small>Sim</small></td>
+                          <td><small></small></td>
+                        </tr>
+                        <tr>
+                          <td><small>Loro José</small></td>
+                          <td><small>23454</small></td>
+                          <td><small>Macho</small></td>
+                          <td><small>04/06/2022</small></td>
+                          <td><small>0.8</small></td>
+                          <td><small>0.5</small></td>
+                          <td><small>Papagaio</small></td>
+                          <td><small>Papagaio-Verdadeiro</small></td>
+                          <td><small>Verde</small></td>
+                          <td><small>Não</small></td>
+                          <td><small>Flag</small></td>
+                          <td><small>Não</small></td>
+                          <td><small>Não</small></td>
+                        </tr>
+                        <tr>
+                          <td><small>Bichano</small></td>
+                          <td><small>92329</small></td>
+                          <td><small>Macho</small></td>
+                          <td><small>20/09/2022</small></td>
+                          <td><small>1.1</small></td>
+                          <td><small>1.0</small></td>
+                          <td><small>Felino</small></td>
+                          <td><small>persa</small></td>
+                          <td><small>Cinza</small></td>
+                          <td><small>Não</small></td>
+                          <td><small>???</small></td>
+                          <td><small>Não</small></td>
+                          <td><small>Sim</small></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+          <button type="button" class="btn btn-default">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Offcanvas -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
     <div class="offcanvas-header">
@@ -2418,21 +3895,21 @@
         <div class="col-12">
           <div class="input-group has-validation">
             <select id="unidades-filtro-multiple-select" class="form-select form-select-sm"
-              data-placeholder="Unidade de Atendimento..." multiple>
-              <option value="1">SP – Ibirapuera</option>
-              <option value="2">SP – Morumbi</option>
-              <option value="3">SP – Jardins</option>
-              <option value="4">SP – Pacaembu</option>
-              <option value="5">SP – Tatuapé</option>
-              <option value="6">SP – Vila Prudente</option>
-              <option value="7">SP – Centro de Radioterapia</option>
-              <option value="8">RJ – Pet Care Animália</option>
-              <option value="9">RS – Porto Alegre Zona Norte</option>
-              <option value="10">RS – Porto Alegre Zona Sul</option>
-              <option value="11">RS – Porto Alegre Onco Support</option>
-              <option value="12">RS – Novo Hamburgo</option>
-              <option value="13">RS – Litoral / Xangri-Lá</option>
-              <option value="14">SC – Balneário Camboriú</option>
+              data-placeholder="Unidade de Atendimento..." onchange="onChangeFilter()" multiple>
+              <option value="SP – Ibirapuera">SP – Ibirapuera</option>
+              <option value="SP – Morumbi">SP – Morumbi</option>
+              <option value="SP – Jardins">SP – Jardins</option>
+              <option value="SP – Pacaembu">SP – Pacaembu</option>
+              <option value="SP – Tatuapé">SP – Tatuapé</option>
+              <option value="SP – Vila Prudente">SP – Vila Prudente</option>
+              <option value="SP – Centro de Radioterapia">SP – Centro de Radioterapia</option>
+              <option value="RJ – Pet Care Animália">RJ – Pet Care Animália</option>
+              <option value="RS – Porto Alegre Zona Norte">RS – Porto Alegre Zona Norte</option>
+              <option value="RS – Porto Alegre Zona Sul">RS – Porto Alegre Zona Sul</option>
+              <option value="RS – Porto Alegre Onco Support">RS – Porto Alegre Onco Support</option>
+              <option value="RS – Novo Hamburgo">RS – Novo Hamburgo</option>
+              <option value="RS – Litoral / Xangri-Lá">RS – Litoral / Xangri-Lá</option>
+              <option value="SC – Balneário Camboriú">SC – Balneário Camboriú</option>
             </select>
             <div class="invalid-feedback">Por favor insira a Unidade de Atendimento.</div>
           </div>
@@ -2442,27 +3919,27 @@
         <div class="col-12">
           <div class="input-group has-validation">
             <select id="especialidade-filtro-multiple-select" class="form-select form-select-sm"
-              data-placeholder="Especialidade..." multiple>
-              <option value="1">Acupuntura</option>
-              <option value="2">Anestesia</option>
-              <option value="3">Cardiologia</option>
-              <option value="4">Cirurgia</option>
-              <option value="5">Dermatologia</option>
-              <option value="6">Endocrinologia</option>
-              <option value="7">Fisioterapia</option>
-              <option value="8">Gastroenterologia</option>
-              <option value="9">Hemodiálise</option>
-              <option value="10">Medicina Felina</option>
-              <option value="12">Nefrologia e Urologia</option>
-              <option value="13">Neurologia</option>
-              <option value="14">Nutrição</option>
-              <option value="15">Odontologia</option>
-              <option value="16">Oftalmologia</option>
-              <option value="17">Oncologia</option>
-              <option value="18">Ortopedia</option>
-              <option value="19">Radioterapia</option>
-              <option value="20">Reprodução</option>
-              <option value="21">Tratamento com Células-Tronco</option>
+              data-placeholder="Especialidade..." onchange="onChangeFilter()" multiple>
+              <option value="Acupuntura">Acupuntura</option>
+              <option value="Anestesia">Anestesia</option>
+              <option value="Cardiologia">Cardiologia</option>
+              <option value="Cirurgia">Cirurgia</option>
+              <option value="Dermatologia">Dermatologia</option>
+              <option value="Endocrinologia">Endocrinologia</option>
+              <option value="Fisioterapia">Fisioterapia</option>
+              <option value="Gastroenterologia">Gastroenterologia</option>
+              <option value="Hemodiálise">Hemodiálise</option>
+              <option value="Medicina Felina">Medicina Felina</option>
+              <option value="Nefrologia e Urologia">Nefrologia e Urologia</option>
+              <option value="Neurologia">Neurologia</option>
+              <option value="Nutrição">Nutrição</option>
+              <option value="Odontologia">Odontologia</option>
+              <option value="Oftalmologia">Oftalmologia</option>
+              <option value="Oncologia">Oncologia</option>
+              <option value="Ortopedia">Ortopedia</option>
+              <option value="Radioterapia">Radioterapia</option>
+              <option value="Reprodução">Reprodução</option>
+              <option value="Tratamento com Células-Tronco">Tratamento com Células-Tronco</option>
             </select>
             <div class="invalid-feedback">Por favor insira a Especialidade.</div>
           </div>
@@ -2472,10 +3949,10 @@
         <div class="col-12">
           <div class="input-group has-validation">
             <select id="especialista-filtro-multiple-select" class="form-select form-select-sm"
-              data-placeholder="Especialista..." multiple>
-              <option value="1">Dra. Maria Socorro Alencar</option>
-              <option value="2">Dra. Ana Tereza Cintra</option>
-              <option value="3">Dr. Davi Alencar Simões</option>
+              data-placeholder="Especialista..." onchange="onChangeFilter()" multiple>
+              <option value="Dra. Maria Socorro Alencar">Dra. Maria Socorro Alencar</option>
+              <option value="Dra. Ana Tereza Cintra">Dra. Ana Tereza Cintra</option>
+              <option value=">Dr. Davi Alencar Simões">Dr. Davi Alencar Simões</option>
             </select>
             <div class="invalid-feedback">Por favor insira o Especialista.</div>
           </div>
