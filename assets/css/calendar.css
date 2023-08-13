@@ -22,9 +22,13 @@
 }
 
 .fc-col-header-cell-cushion {
-    color: #13A89E;
+    color: #006790;
 }
 
 .fc-col-header-cell-cushion:hover {
+    color: #11978e;
+}
+
+.fc-toolbar-title {
     color: #006790;
 }

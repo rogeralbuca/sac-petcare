@@ -3,6 +3,8 @@
 --------------------------------------------------------------*/
 :root {
   scroll-behavior: smooth;
+  --primary-color : #006790;
+  --secundary-color : #00A79D;
 }
 
 body {
@@ -17,7 +19,7 @@ a {
 }
 
 a:hover {
-  color: #717ff5;
+  color: var(--secundary-color);
   text-decoration: none;
 }
 
@@ -866,35 +868,10 @@ h6 {
   max-height: 120px;
 }
 
-.btn-default {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: var(--secundary-color);
-  --bs-btn-border-color: var(--secundary-color);
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #11978e;
-  --bs-btn-hover-border-color: #0f867e;
-  --bs-btn-focus-shadow-rgb: 49, 132, 253;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0f867e;
-  --bs-btn-active-border-color: #0f867e;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: var(--secundary-color);
-  --bs-btn-disabled-border-color: var(--secundary-color);
-}
-
 .bg-login-image {
   background: url("../img/pet-profile.jpg");
   background-position: center;
   background-size: cover;
-}
-
-/*--------------------------------------------------------------
-# Colors
---------------------------------------------------------------*/
-:root {
-  --primary-color : #006790;
-  --secundary-color : #00A79D;
 }
 
 /*--------------------------------------------------------------
@@ -960,4 +937,33 @@ h6 {
 --------------------------------------------------------------*/
 .horaios-height {
   height: 15rem;
+}
+
+/*--------------------------------------------------------------
+# Bootstrap Custom Colors
+--------------------------------------------------------------*/
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.pagination {
+  --bs-pagination-color: var(--primary-color);
+}
+
+.btn-secundary-petcare {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--secundary-color);
+  --bs-btn-border-color: var(--secundary-color);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #11978e;
+  --bs-btn-hover-border-color: #0f867e;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0f867e;
+  --bs-btn-active-border-color: #0f867e;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--secundary-color);
+  --bs-btn-disabled-border-color: var(--secundary-color);
 }
