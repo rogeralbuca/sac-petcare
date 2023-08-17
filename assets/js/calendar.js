@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             $('#submitButton').on('click', function () {
                 calendar.addEvent({
-                    title: $("#titulo").val(),
+                    title: 'Novo',
                     start: info.start,
                     end: info.end,
                     description: $("#observacao").val()

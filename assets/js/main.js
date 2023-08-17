@@ -155,6 +155,26 @@ $("#toggleBtn").on('click', function () {
 });
 
 /**
+* Button Toogle Fullscreen
+*/
+$("#agendaBtn").on('click', function () {
+  var calendar = $('.calendar');
+  console.log(this)
+
+  if(calendar.css('opacity') === '0') {
+    calendar.css({
+      'opacity': '0.9',
+    });
+    $("#agendaBtn").addClass('active');
+  } else {
+    calendar.css({
+      'opacity': '0',
+    });
+    $("#agendaBtn").removeClass('active');
+  }
+});
+
+/**
  * Constantes Offcavas Bootstrap
  */
 const offcanvas = document.getElementById('offcanvasWithBackdrop')
