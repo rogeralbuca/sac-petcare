@@ -5,11 +5,11 @@
   scroll-behavior: smooth;
   --primary-color : #006790;
   --secundary-color : #00A79D;
+  
 }
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #B9DCD2;
   color: #444444;
 }
 
@@ -21,15 +21,6 @@ a {
 a:hover {
   color: var(--secundary-color);
   text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Nunito", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -174,48 +165,21 @@ h6 {
   }
 }
 
-/* Card */
-.card {
+/* Custom Card */
+.calendar-card {
   margin-bottom: 30px;
   border: none;
   border-radius: 5px;
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
 }
 
-.card-header,
-.card-footer {
-  border-color: #ebeef4;
-  background-color: #fff;
-  color: #798eb3;
-  padding: 15px;
-}
-
-.card-title {
-  padding: 20px 0 15px 0;
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--primary-color);
-  font-family: "Poppins", sans-serif;
-}
-
-.card-title span {
-  color: #899bbd;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.card-body {
+.calendar-card-body {
   padding: 0 20px 20px 20px;
-}
-
-.card-img-overlay {
-  background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Alerts */
 .alert-heading {
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
   font-size: 20px;
 }
 
@@ -264,7 +228,6 @@ h6 {
 /* Breadcrumbs */
 .breadcrumb {
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
   color: #899bbd;
   font-weight: 600;
 }
@@ -287,28 +250,6 @@ h6 {
   font-weight: 600;
 }
 
-/* Bordered Tabs */
-.nav-tabs-bordered {
-  border-bottom: 2px solid #ebeef4;
-}
-
-.nav-tabs-bordered .nav-link {
-  margin-bottom: -2px;
-  border: none;
-  color: #2c384e;
-}
-
-.nav-tabs-bordered .nav-link:hover,
-.nav-tabs-bordered .nav-link:focus {
-  color: var(--primary-color);
-}
-
-.nav-tabs-bordered .nav-link.active {
-  background-color: #fff;
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
-}
-
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -325,7 +266,6 @@ h6 {
   font-size: 26px;
   font-weight: 700;
   color: #fff;
-  font-family: "Nunito", sans-serif;
 }
 
 .header {
@@ -884,8 +824,8 @@ h6 {
 # Modal
 --------------------------------------------------------------*/
 .modal-header h5 {
-  font-weight: bold !important;
-  color: var(--secundary-color);
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 /*--------------------------------------------------------------
@@ -935,30 +875,76 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Bootstrap Custom Colors
+# Bootstrap Custom Elements
 --------------------------------------------------------------*/
+
+/* Check input */
 .form-check-input:checked {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: var(--secundary-color);
+  border-color: var(--secundary-color);
 }
 
+.form-check-input:focus {
+  border-color: var(--secundary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 167, 157, 0.25);
+}
+
+/* Pagination */
 .pagination {
   --bs-pagination-color: var(--primary-color);
 }
 
+/* Primary Button */
+.btn-primary-petcare {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #005c81;
+  --bs-btn-hover-border-color: #005c81;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #005273;
+  --bs-btn-active-border-color: #005273;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--primary-color);
+  --bs-btn-disabled-border-color: var(--primary-color);
+}
+
+/* Secundary Button */
 .btn-secundary-petcare {
   --bs-btn-color: #fff;
   --bs-btn-bg: var(--secundary-color);
   --bs-btn-border-color: var(--secundary-color);
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #11978e;
-  --bs-btn-hover-border-color: #0f867e;
+  --bs-btn-hover-bg: #00968d;
+  --bs-btn-hover-border-color: #00968d;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0f867e;
-  --bs-btn-active-border-color: #0f867e;
+  --bs-btn-active-bg: #00857d;
+  --bs-btn-active-border-color: #00857d;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: var(--secundary-color);
   --bs-btn-disabled-border-color: var(--secundary-color);
+}
+
+/*--------------------------------------------------------------
+# Background Page Body
+--------------------------------------------------------------*/
+.petcare-bg-page {
+  background: #B9DCD2;
+}
+
+/*--------------------------------------------------------------
+# Custom Table
+--------------------------------------------------------------*/
+.table-sm {
+  font-size: 0.875em;
+}
+
+.table thead {
+  --bs-table-color: #fff;
+  --bs-table-bg: var(--secundary-color);
 }
