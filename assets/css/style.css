@@ -851,6 +851,11 @@ a:hover {
 .periodo-icon {
   margin-right: 10px;
   float: right;
+  color: #fff;
+}
+
+.periodo-icon:hover {
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
