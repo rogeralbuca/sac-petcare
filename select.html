@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body style="width: 1024px;">
+
+    <h3>Documentação</h3>
+    <h5><a href="https://select2.org/data-sources">select2.org data-sources</a></h5>
+
+    <select class="js-example-basic-single" multiple="multiple" style="width: 1024px;">
+    </select>
+
+    <button id="target2" name="target2">Set New Datasource 2</button>
+
+    <button id="target3" name="target3">Clear Select</button>
+
+    <button id="target4" name="target4">Add New Option</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+
+        var data1 = [
+            {
+                id: 0,
+                text: 'Especialista 01'
+            },
+            {
+                id: 1,
+                text: 'Especialista 02'
+            },
+            {
+                id: 2,
+                text: 'Especialista 03'
+            }
+        ];
+
+        var data2 = [
+            {
+                id: 4,
+                text: 'Especialista 04'
+            },
+            {
+                id: 5,
+                text: 'Especialista 05'
+            },
+            {
+                id: 6,
+                text: 'Especialista 06'
+            }
+        ];
+
+
+        var data3 = [
+            {
+                id: 7,
+                text: 'Especialista 07'
+            },
+            {
+                id: 8,
+                text: 'Especialista 08'
+            },
+            {
+                id: 9,
+                text: 'Especialista 09'
+            }
+        ];
+
+        // In your Javascript (external .js resource or <script> tag)
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+
+        $(".js-example-basic-single").select2({
+            data: data1
+        });
+
+        $("#target2").on("click", function () {
+            $(".js-example-basic-single").select2({
+                data: data2
+            });
+        });
+
+        var $exampleMulti = $(".js-example-basic-single").select2();
+
+        $("#target3").on("click", function () {
+            $exampleMulti.val(null).trigger("change");
+        });
+
+        var data = {
+            id: 10,
+            text: 'Especialista 10'
+        };
+
+        var newOption = new Option(data.text, data.id, false, false);
+
+        $("#target4").on("click", function () {
+            $('.js-example-basic-single').append(newOption).trigger('change');
+        });
+
+    </script>
+</body>
+
+</html>
