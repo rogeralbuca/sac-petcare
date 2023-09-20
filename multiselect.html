@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css">
+    <script src="assets/vendor/jquery/js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+
+</head>
+<body>
+    <div class="row p-5">
+        <div class="col-md-4">
+            <select class="multi-select form-control" id="multiple-checkboxes" multiple>
+                <option value="-">None</option>
+                <option value="tt11138512">The Northman (2022)</option>
+                <option value="tt4998632">Ambulance (2022)</option>
+                <option value="tt8296030">You Won't Be Alone (2022)</option>
+            </select>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#multiple-checkboxes").multiselect({
+                // Bootstrap 5 compatibility
+                templates: {
+                    button: '<button type="button" class="multiselect dropdown-toggle btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false"><span class="multiselect-selected-text"></span></button>',
+                },
+
+                // Filtering
+                enableFiltering: true,
+                enableCaseInsensitiveFiltering: true,
+
+                // Layout
+                buttonWidth: "100%",
+            });
+        }); 
+    </script>
+</body>
+
+</html>
